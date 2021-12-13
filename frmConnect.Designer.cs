@@ -31,7 +31,7 @@
             this.lblPort = new System.Windows.Forms.Label();
             this.lblAddr = new System.Windows.Forms.Label();
             this.cbPort = new System.Windows.Forms.ComboBox();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.numAddr = new System.Windows.Forms.NumericUpDown();
             this.tcConnect = new System.Windows.Forms.TabControl();
@@ -48,6 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbBaudrate = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numAddr)).BeginInit();
             this.tcConnect.SuspendLayout();
             this.tDirect.SuspendLayout();
@@ -78,20 +79,21 @@
             // 
             this.cbPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPort.FormattingEnabled = true;
-            this.cbPort.Location = new System.Drawing.Point(81, 25);
+            this.cbPort.Location = new System.Drawing.Point(81, 26);
             this.cbPort.Name = "cbPort";
             this.cbPort.Size = new System.Drawing.Size(82, 21);
             this.cbPort.TabIndex = 2;
             this.cbPort.SelectedIndexChanged += new System.EventHandler(this.cbPort_SelectedIndexChanged);
             // 
-            // btnOK
+            // btnConnect
             // 
-            this.btnOK.Location = new System.Drawing.Point(168, 237);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(151, 23);
-            this.btnOK.TabIndex = 3;
-            this.btnOK.Text = "Соединение";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnConnect.Location = new System.Drawing.Point(168, 237);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(151, 23);
+            this.btnConnect.TabIndex = 3;
+            this.btnConnect.Text = "Соединение";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
@@ -134,6 +136,7 @@
             // 
             // tDirect
             // 
+            this.tDirect.Controls.Add(this.btnUpdate);
             this.tDirect.Controls.Add(this.cbPort);
             this.tDirect.Controls.Add(this.numAddr);
             this.tDirect.Controls.Add(this.lblPort);
@@ -283,6 +286,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Скорость соединения, бод";
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackgroundImage = global::OblikConfigurator.Properties.Resources.refresh_23x23;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdate.Location = new System.Drawing.Point(169, 25);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(0);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(23, 23);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // frmConnect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,7 +305,7 @@
             this.ClientSize = new System.Drawing.Size(491, 270);
             this.ControlBox = false;
             this.Controls.Add(this.tcConnect);
-            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.btnCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmConnect";
@@ -312,7 +327,7 @@
         private System.Windows.Forms.Label lblPort;
         private System.Windows.Forms.Label lblAddr;
         private System.Windows.Forms.ComboBox cbPort;
-        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.NumericUpDown numAddr;
         private System.Windows.Forms.TabControl tcConnect;
@@ -329,6 +344,7 @@
         private System.Windows.Forms.Label lAccess;
         private System.Windows.Forms.NumericUpDown nRepeats;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 

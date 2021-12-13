@@ -14,6 +14,7 @@ namespace OblikConfigurator
     public partial class frmConnect : Form
     {
         internal string port;
+        internal frmMain mainForm;
         public frmConnect()
         {
             InitializeComponent();
@@ -39,12 +40,23 @@ namespace OblikConfigurator
 
         private void ScanPorts()
         {
+            btnConnect.Enabled = true;
+            cbPort.Enabled = true;
             string[] ports = SerialPort.GetPortNames();
             foreach (string port in ports)
             {
                 cbPort.Items.Add(port);
             }
-            cbPort.Text = ports[0];
+            try
+            {
+                cbPort.Text = ports[0];
+            }
+            catch (IndexOutOfRangeException)
+            {
+                //Доступных портов не обнаружено
+                cbPort.Enabled = false;
+                btnConnect.Enabled = false;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -76,6 +88,19 @@ namespace OblikConfigurator
         private void tbPassword_TextChanged(object sender, EventArgs e)
         {
             Settings.currentConnection.Password = tbPassword.Text;
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            Hide();
+            mainForm = new frmMain();
+            mainForm.Show();
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            ScanPorts();
         }
     }
 }
