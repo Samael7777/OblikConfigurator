@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OblikConfigurator", "OblikConfigurator.csproj", "{38110BE9-218E-4D31-A75C-32C25E0936D3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4AED38C8-F276-4F6D-B5E3-7627DB2FECA7} = {4AED38C8-F276-4F6D-B5E3-7627DB2FECA7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oblik.Framework", "..\Oblik Framework\Oblik.Framework\Oblik.Framework.csproj", "{4AED38C8-F276-4F6D-B5E3-7627DB2FECA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{38110BE9-218E-4D31-A75C-32C25E0936D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38110BE9-218E-4D31-A75C-32C25E0936D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38110BE9-218E-4D31-A75C-32C25E0936D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AED38C8-F276-4F6D-B5E3-7627DB2FECA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AED38C8-F276-4F6D-B5E3-7627DB2FECA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AED38C8-F276-4F6D-B5E3-7627DB2FECA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AED38C8-F276-4F6D-B5E3-7627DB2FECA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

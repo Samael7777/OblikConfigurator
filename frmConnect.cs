@@ -13,10 +13,10 @@ namespace OblikConfigurator
 {
     public partial class frmConnect : Form
     {
-        internal string port;
         internal frmMain mainForm;
-        public frmConnect()
+        public frmConnect(frmMain sender)
         {
+            mainForm = sender;
             InitializeComponent();
             ScanPorts();
             numAddr.Value = 0;
@@ -31,11 +31,12 @@ namespace OblikConfigurator
             nRepeats.Value = Settings.currentConnection.Repeats;
             cbAccess.SelectedIndex = (int)Settings.currentConnection.User;
             tbPassword.Text = Settings.currentConnection.Password;
+            numAddr.Value = Settings.currentConnection.Address;
         }
 
         private void cbPort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            port = cbPort.SelectedText;
+            Settings.currentConnection.Port = cbPort.SelectedItem.ToString();
         }
 
         private void ScanPorts()
@@ -61,7 +62,7 @@ namespace OblikConfigurator
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
         private void cbBaudrate_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,15 +93,17 @@ namespace OblikConfigurator
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            Hide();
-            mainForm = new frmMain();
-            mainForm.Show();
-
+            mainForm.Connect();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             ScanPorts();
+        }
+
+        private void numAddr_ValueChanged(object sender, EventArgs e)
+        {
+            Settings.currentConnection.Address = (byte)numAddr.Value;
         }
     }
 }

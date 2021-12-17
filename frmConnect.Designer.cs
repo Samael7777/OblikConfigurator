@@ -36,6 +36,7 @@
             this.numAddr = new System.Windows.Forms.NumericUpDown();
             this.tcConnect = new System.Windows.Forms.TabControl();
             this.tDirect = new System.Windows.Forms.TabPage();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.tDB = new System.Windows.Forms.TabPage();
             this.tSettings = new System.Windows.Forms.TabPage();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbBaudrate = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numAddr)).BeginInit();
             this.tcConnect.SuspendLayout();
             this.tDirect.SuspendLayout();
@@ -122,6 +122,7 @@
             0,
             0,
             0});
+            this.numAddr.ValueChanged += new System.EventHandler(this.numAddr_ValueChanged);
             // 
             // tcConnect
             // 
@@ -148,6 +149,18 @@
             this.tDirect.TabIndex = 0;
             this.tDirect.Text = "Прямое соединение";
             this.tDirect.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackgroundImage = global::OblikConfigurator.Properties.Resources.refresh_23x23;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdate.Location = new System.Drawing.Point(169, 25);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(0);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(23, 23);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // tDB
             // 
@@ -285,18 +298,6 @@
             this.label1.Size = new System.Drawing.Size(142, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Скорость соединения, бод";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackgroundImage = global::OblikConfigurator.Properties.Resources.refresh_23x23;
-            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdate.Location = new System.Drawing.Point(169, 25);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(0);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(23, 23);
-            this.btnUpdate.TabIndex = 7;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // frmConnect
             // 
