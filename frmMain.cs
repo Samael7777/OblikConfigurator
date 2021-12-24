@@ -14,17 +14,13 @@ namespace OblikConfigurator
     public partial class frmMain : Form
     {
         frmConnect connectionForm;
-
-        FirmwareInfo firmwareInfo;
-        CurrentValues currentValues;
-        MinuteValues minuteValues;
-        DayGraph dayGraph;
-        EventLog eventLog;
-        NetworkConfig networkConfig;
-
+        internal Meter oblik;
+        
+   
         public frmMain()
         {
-            InitializeComponent();          
+            InitializeComponent();
+            tmrTimer.Interval = 1000;
         }
 
         private void frmMain_Shown(object sender, EventArgs e)
@@ -37,34 +33,61 @@ namespace OblikConfigurator
         internal void Connect()
         {
             connectionForm.Close();
-            firmwareInfo = new FirmwareInfo(Settings.currentConnection);         
-            currentValues = new CurrentValues(Settings.currentConnection);
-            minuteValues = new MinuteValues(Settings.currentConnection);
-            dayGraph = new DayGraph(Settings.currentConnection);
-            eventLog = new EventLog(Settings.currentConnection);
-            networkConfig = new NetworkConfig(Settings.currentConnection);
+            oblik = new Meter(Settings.currentConnection);
 
             UpdateInfo();
         }
         //Полчение информации о счетчике
         internal void UpdateInfo()
         {
-            firmwareInfo.Read();
-            networkConfig.Read();
-            lblFW.Text = $"{firmwareInfo.Version}.{firmwareInfo.Build}";
+            oblik.ReadGeneralInfo();
+
+            lblFW.Text = $"{oblik.Firmware.Version}.{oblik.Firmware.Build}";
             lblPort.Text = Settings.currentConnection.Port;
-            lblAddress.Text = networkConfig.Addr.ToString();
+            lblAddress.Text = oblik.MeterNetwork.Addr.ToString();
             lblProtocol.Text = (Settings.currentConnection.Address == 0) ? "RS-232" : "RS-485";
-            lblBaudrate.Text = networkConfig.Speed.ToString();
+            lblBaudrate.Text = oblik.MeterNetwork.Speed.ToString();
+
+            lblDayGraphRecs.Text = oblik.DayGraphRecords.NumberOfRecords.ToString();
+            lblEventLogRecs.Text = oblik.EventRecords.NumberOfRecords.ToString();
 
             UpdateCurrentValues();
         }
         //Обновление текущих показаний
         internal void UpdateCurrentValues()
         {
-            currentValues.Read();
-            lblFreq.Text = currentValues.Freq.ToString();
-            lblUa.Text = currentValues.Volt1.ToString();
+            float Ua, Ub, Uc, Ia, Ib, Ic, freq, cos, P, Q, sig, angle;
+            oblik.CurrentVals.Read();
+            Ua = oblik.CurrentVals.Volt1;
+            Ub = oblik.CurrentVals.Volt2;
+            Uc = oblik.CurrentVals.Volt3;
+            Ia = oblik.CurrentVals.Curr1;
+            Ib = oblik.CurrentVals.Curr2;
+            Ic = oblik.CurrentVals.Curr3;
+            freq = oblik.CurrentVals.Freq;
+            P = oblik.CurrentVals.Act_pw;
+            Q = oblik.CurrentVals.Rea_pw;
+            
+            angle = (float)Math.Atan(Q / P);
+            sig = Math.Sign(angle);
+            cos = (float)Math.Cos(angle);
+            if (sig == -1)
+            {
+                lblCos.Text = String.Format("{0:f3}", cos) + "(C)";
+            }
+            else
+            {
+                lblCos.Text = String.Format("{0:f3}", cos) + "(L)";
+            }
+            lblUa.Text = String.Format("{0:f2}", Ua);
+            lblUb.Text = String.Format("{0:f2}", Ub);
+            lblUc.Text = String.Format("{0:f2}", Uc);
+            lblIa.Text = String.Format("{0:f2}", Ia);
+            lblIb.Text = String.Format("{0:f2}", Ib);
+            lblIc.Text = String.Format("{0:f2}", Ic);
+            lblFreq.Text = String.Format("{0:f2}", freq);
+            lblP.Text = String.Format("{0:f2}", P);
+            lblQ.Text = String.Format("{0:f2}", Q);
 
         }
 
@@ -86,6 +109,21 @@ namespace OblikConfigurator
         private void btnNetConfig_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void chbAutoUpdate_CheckedChanged(object sender, EventArgs e)
+        {
+            tmrTimer.Enabled = chbAutoUpdate.Checked;
+        }
+
+        private void tmrTimer_Tick(object sender, EventArgs e)
+        {
+            UpdateCurrentValues();
         }
     }
 }
