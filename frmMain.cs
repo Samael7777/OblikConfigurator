@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Oblik;
+using Oblik.Driver;
 
 
 namespace OblikConfigurator
@@ -15,6 +16,7 @@ namespace OblikConfigurator
     {
         frmConnect connectionForm;
         internal Meter oblik;
+        internal OblikSerialDriver oblikDriver;
         
    
         public frmMain()
@@ -33,7 +35,8 @@ namespace OblikConfigurator
         internal void Connect()
         {
             connectionForm.Close();
-            oblik = new Meter(Settings.currentConnection);
+            oblikDriver = new OblikSerialDriver(Settings.currentConnection);
+            oblik = new Meter(oblikDriver);
 
             UpdateInfo();
         }
@@ -79,15 +82,15 @@ namespace OblikConfigurator
             {
                 lblCos.Text = String.Format("{0:f3}", cos) + "(L)";
             }
-            lblUa.Text = String.Format("{0:f2}", Ua);
-            lblUb.Text = String.Format("{0:f2}", Ub);
-            lblUc.Text = String.Format("{0:f2}", Uc);
-            lblIa.Text = String.Format("{0:f2}", Ia);
-            lblIb.Text = String.Format("{0:f2}", Ib);
-            lblIc.Text = String.Format("{0:f2}", Ic);
-            lblFreq.Text = String.Format("{0:f2}", freq);
-            lblP.Text = String.Format("{0:f2}", P);
-            lblQ.Text = String.Format("{0:f2}", Q);
+            lblUa.Text = String.Format("{0:f4}", Ua);
+            lblUb.Text = String.Format("{0:f4}", Ub);
+            lblUc.Text = String.Format("{0:f4}", Uc);
+            lblIa.Text = String.Format("{0:f4}", Ia);
+            lblIb.Text = String.Format("{0:f4}", Ib);
+            lblIc.Text = String.Format("{0:f4}", Ic);
+            lblFreq.Text = String.Format("{0:f4}", freq);
+            lblP.Text = String.Format("{0:f4}", P);
+            lblQ.Text = String.Format("{0:f4}", Q);
 
         }
 
