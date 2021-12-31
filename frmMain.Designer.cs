@@ -100,6 +100,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.chbAutoUpdate = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.соединениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.инструментыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.картаСегментовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrTimer = new System.Windows.Forms.Timer(this.components);
             this.btnUpdateInfo = new System.Windows.Forms.Button();
@@ -281,7 +284,7 @@
             this.rtbLog.Name = "rtbLog";
             this.rtbLog.ReadOnly = true;
             this.rtbLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.rtbLog.Size = new System.Drawing.Size(1115, 72);
+            this.rtbLog.Size = new System.Drawing.Size(788, 72);
             this.rtbLog.TabIndex = 3;
             this.rtbLog.Text = "";
             // 
@@ -414,7 +417,7 @@
             this.lblStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 555);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1115, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(788, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -977,12 +980,36 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.соединениеToolStripMenuItem,
+            this.инструментыToolStripMenuItem,
             this.настройкиToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1115, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(788, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // соединениеToolStripMenuItem
+            // 
+            this.соединениеToolStripMenuItem.Name = "соединениеToolStripMenuItem";
+            this.соединениеToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.соединениеToolStripMenuItem.Text = "Соединение";
+            this.соединениеToolStripMenuItem.Click += new System.EventHandler(this.соединениеToolStripMenuItem_Click);
+            // 
+            // инструментыToolStripMenuItem
+            // 
+            this.инструментыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.картаСегментовToolStripMenuItem});
+            this.инструментыToolStripMenuItem.Name = "инструментыToolStripMenuItem";
+            this.инструментыToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.инструментыToolStripMenuItem.Text = "Инструменты";
+            // 
+            // картаСегментовToolStripMenuItem
+            // 
+            this.картаСегментовToolStripMenuItem.Name = "картаСегментовToolStripMenuItem";
+            this.картаСегментовToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.картаСегментовToolStripMenuItem.Text = "Карта сегментов";
+            this.картаСегментовToolStripMenuItem.Click += new System.EventHandler(this.картаСегментовToolStripMenuItem_Click);
             // 
             // настройкиToolStripMenuItem
             // 
@@ -1003,6 +1030,7 @@
             this.btnUpdateInfo.TabIndex = 8;
             this.btnUpdateInfo.Text = "Обновить инфорацию";
             this.btnUpdateInfo.UseVisualStyleBackColor = true;
+            this.btnUpdateInfo.Click += new System.EventHandler(this.btnUpdateInfo_Click);
             // 
             // btnExit
             // 
@@ -1018,7 +1046,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 577);
+            this.ClientSize = new System.Drawing.Size(788, 577);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnUpdateInfo);
             this.Controls.Add(this.groupBox3);
@@ -1128,5 +1156,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label lblBaudrate;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ToolStripMenuItem соединениеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem инструментыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem картаСегментовToolStripMenuItem;
     }
 }

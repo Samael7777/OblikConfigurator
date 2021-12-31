@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Oblik;
 
 
 namespace OblikConfigurator
 {
+    public delegate void Action();
+
     internal static class Program
     {
 

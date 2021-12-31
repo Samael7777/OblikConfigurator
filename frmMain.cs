@@ -15,8 +15,19 @@ namespace OblikConfigurator
     public partial class frmMain : Form
     {
         frmConnect connectionForm;
+        frmSegmenstMap segmantsMapForm;
         internal Meter oblik;
         internal OblikSerialDriver oblikDriver;
+
+        /// <summary>
+        /// статус соединения
+        /// </summary>
+        internal enum ConnectionStatus
+        {
+            OK,
+            Wait,
+            Error,
+        }
         
    
         public frmMain()
@@ -25,13 +36,11 @@ namespace OblikConfigurator
             tmrTimer.Interval = 1000;
         }
 
-        private void frmMain_Shown(object sender, EventArgs e)
-        {
-            connectionForm = new frmConnect(this);
-            connectionForm.Show();
-            connectionForm.BringToFront();
-        }
-        //Инициализация при подключении
+        #region Служебные методы
+
+        /// <summary>
+        /// Инициализация при подключении
+        /// </summary>
         internal void Connect()
         {
             connectionForm.Close();
@@ -40,10 +49,77 @@ namespace OblikConfigurator
 
             UpdateInfo();
         }
-        //Полчение информации о счетчике
+
+        /// <summary>
+        /// Соединение с проверкой ошибок
+        /// </summary>
+        /// <param name="segment">Сегмент</param>
+        public bool SafeConnect(Action action)
+        {
+
+            int repeats = Settings.currentConnection.Repeats;
+            bool status = false;
+            while ((repeats > 0) && !status)
+            {
+                try
+                {
+                    SetConnectionStatus(ConnectionStatus.Wait);
+                    action.Invoke();
+                    SetConnectionStatus(ConnectionStatus.OK);
+                    status = true;
+                }
+                catch (OblikIOException ex)
+                {
+                    status = false;
+                    SetConnectionStatus(ConnectionStatus.Error);
+                    repeats--;
+                    if (repeats == 0)
+                    {
+                        AddLog(ex.Message);
+                        //Отключение автообновления текущих показаний
+                        chbAutoUpdate.Checked = false;
+                        tmrTimer.Enabled = false;
+                    }
+                }
+            }
+            return status;
+        }
+
+        /// <summary>
+        /// Индикация состояния подключения
+        /// </summary>
+        internal void SetConnectionStatus(ConnectionStatus status)
+        {
+            switch (status)
+            {
+                case ConnectionStatus.OK:
+                    lblStatus.Text = "OK";
+                    lblStatus.BackColor = Color.LimeGreen;
+                    break;
+                case ConnectionStatus.Wait:
+                    lblStatus.Text = "Ожидание...";
+                    lblStatus.BackColor = Color.Yellow;
+                    break;
+                case ConnectionStatus.Error:
+                    lblStatus.Text = "Ошибка!";
+                    lblStatus.BackColor = Color.Red;
+                    break;
+                default:
+                    lblStatus.Text = "??????";
+                    lblStatus.BackColor = Color.DarkOrange;
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Полчение информации о счетчике
+        /// </summary>
         internal void UpdateInfo()
         {
-            oblik.ReadGeneralInfo();
+            if (!SafeConnect(oblik.ReadGeneralInfo))
+            {
+                return;
+            }
 
             lblFW.Text = $"{oblik.Firmware.Version}.{oblik.Firmware.Build}";
             lblPort.Text = Settings.currentConnection.Port;
@@ -56,31 +132,38 @@ namespace OblikConfigurator
 
             UpdateCurrentValues();
         }
-        //Обновление текущих показаний
+
+        /// <summary>
+        /// Обновление текущих показаний
+        /// </summary>
         internal void UpdateCurrentValues()
         {
-            float Ua, Ub, Uc, Ia, Ib, Ic, freq, cos, P, Q, sig, angle;
-            oblik.CurrentVals.Read();
-            Ua = oblik.CurrentVals.Volt1;
-            Ub = oblik.CurrentVals.Volt2;
-            Uc = oblik.CurrentVals.Volt3;
-            Ia = oblik.CurrentVals.Curr1;
-            Ib = oblik.CurrentVals.Curr2;
-            Ic = oblik.CurrentVals.Curr3;
-            freq = oblik.CurrentVals.Freq;
-            P = oblik.CurrentVals.Act_pw;
-            Q = oblik.CurrentVals.Rea_pw;
-            
-            angle = (float)Math.Atan(Q / P);
-            sig = Math.Sign(angle);
-            cos = (float)Math.Cos(angle);
+
+            if (!SafeConnect(oblik.CurrentVals.Read))
+            {
+                return;
+            }
+
+            float Ua = oblik.CurrentVals.Volt1;
+            float Ub = oblik.CurrentVals.Volt2;
+            float Uc = oblik.CurrentVals.Volt3;
+            float Ia = oblik.CurrentVals.Curr1;
+            float Ib = oblik.CurrentVals.Curr2;
+            float Ic = oblik.CurrentVals.Curr3;
+            float freq = oblik.CurrentVals.Freq;
+            float P = oblik.CurrentVals.Act_pw;
+            float Q = oblik.CurrentVals.Rea_pw;
+
+            float angle = (float)Math.Atan(Q / P);
+            float sig = Math.Sign(angle);
+            float cos = (float)Math.Cos(angle);
             if (sig == -1)
             {
-                lblCos.Text = String.Format("{0:f3}", cos) + "(C)";
+                lblCos.Text = String.Format("{0:f4}", cos) + "(C)";
             }
             else
             {
-                lblCos.Text = String.Format("{0:f3}", cos) + "(L)";
+                lblCos.Text = String.Format("{0:f4}", cos) + "(L)";
             }
             lblUa.Text = String.Format("{0:f4}", Ua);
             lblUb.Text = String.Format("{0:f4}", Ub);
@@ -91,22 +174,26 @@ namespace OblikConfigurator
             lblFreq.Text = String.Format("{0:f4}", freq);
             lblP.Text = String.Format("{0:f4}", P);
             lblQ.Text = String.Format("{0:f4}", Q);
-
         }
 
-        //Индикация состояния подключения
-        internal void SetStatus(bool status)
+        /// <summary>
+        /// Добавить запись в лог
+        /// </summary>
+        /// <param name="message">Сообщение</param>
+        internal void AddLog(string message)
         {
-            if (status)
-            {
-                lblStatus.Text = "OK";
-                lblStatus.BackColor = Color.LimeGreen;
-            }
-            else
-            {
-                lblStatus.Text = "Ошибка";
-                lblStatus.BackColor = Color.Red;
-            }
+            DateTime currentTime = DateTime.Now;
+            rtbLog.AppendText($"{currentTime} : {message} \n");
+        }
+        #endregion
+
+        /*-------------------------Обработчики событий-----------------------------*/
+
+        private void frmMain_Shown(object sender, EventArgs e)
+        {
+            connectionForm = new frmConnect(this);
+            connectionForm.Show();
+            connectionForm.BringToFront();
         }
 
         private void btnNetConfig_Click(object sender, EventArgs e)
@@ -127,6 +214,26 @@ namespace OblikConfigurator
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
             UpdateCurrentValues();
+        }
+
+        private void btnUpdateInfo_Click(object sender, EventArgs e)
+        {
+            UpdateCurrentValues();
+        }
+
+        private void картаСегментовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            segmantsMapForm = new frmSegmenstMap(this, oblik);
+            segmantsMapForm.Show();
+            segmantsMapForm.BringToFront();
+        }
+
+
+        private void соединениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            connectionForm = new frmConnect(this);
+            connectionForm.Show();
+            connectionForm.BringToFront();
         }
     }
 }
