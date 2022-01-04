@@ -44,11 +44,8 @@
             this.btnNetConfig = new System.Windows.Forms.Button();
             this.rtbLog = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ClearEventLog = new System.Windows.Forms.Button();
+            this.btnClearEventLog = new System.Windows.Forms.Button();
             this.btnClearDayGraph = new System.Windows.Forms.Button();
-            this.lblHHLogRecs = new System.Windows.Forms.Label();
-            this.btnHHLog = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.btnEventLog = new System.Windows.Forms.Button();
             this.btnDayGraph = new System.Windows.Forms.Button();
             this.lblEventLogRecs = new System.Windows.Forms.Label();
@@ -101,12 +98,19 @@
             this.chbAutoUpdate = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.соединениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.последовательныйПортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.инструментыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.картаСегментовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrTimer = new System.Windows.Forms.Timer(this.components);
             this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnSyncTime = new System.Windows.Forms.Button();
+            this.lblMeterTime = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.lblCurrTime = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -116,6 +120,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -137,7 +142,7 @@
             this.lblFW.Name = "lblFW";
             this.lblFW.Size = new System.Drawing.Size(157, 21);
             this.lblFW.TabIndex = 1;
-            this.lblFW.Text = "0.00";
+            this.lblFW.Text = "------";
             this.lblFW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox1
@@ -185,7 +190,7 @@
             this.lblProtocol.Name = "lblProtocol";
             this.lblProtocol.Size = new System.Drawing.Size(157, 18);
             this.lblProtocol.TabIndex = 3;
-            this.lblProtocol.Text = "RS-485";
+            this.lblProtocol.Text = "------";
             this.lblProtocol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblBaudrate
@@ -196,7 +201,7 @@
             this.lblBaudrate.Name = "lblBaudrate";
             this.lblBaudrate.Size = new System.Drawing.Size(157, 18);
             this.lblBaudrate.TabIndex = 7;
-            this.lblBaudrate.Text = "115200";
+            this.lblBaudrate.Text = "------";
             this.lblBaudrate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
@@ -229,7 +234,7 @@
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(157, 18);
             this.label25.TabIndex = 6;
-            this.label25.Text = "Скорость, бод";
+            this.label25.Text = "Скорость RS-485, бод";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblPort
@@ -240,7 +245,7 @@
             this.lblPort.Name = "lblPort";
             this.lblPort.Size = new System.Drawing.Size(157, 18);
             this.lblPort.TabIndex = 4;
-            this.lblPort.Text = "COM00";
+            this.lblPort.Text = "------";
             this.lblPort.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
@@ -251,7 +256,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(157, 18);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Адрес";
+            this.label3.Text = "Адрес RS-485";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAddress
@@ -262,7 +267,7 @@
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(157, 18);
             this.lblAddress.TabIndex = 3;
-            this.lblAddress.Text = "0x00";
+            this.lblAddress.Text = "------";
             this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnNetConfig
@@ -290,11 +295,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.ClearEventLog);
+            this.groupBox2.Controls.Add(this.btnClearEventLog);
             this.groupBox2.Controls.Add(this.btnClearDayGraph);
-            this.groupBox2.Controls.Add(this.lblHHLogRecs);
-            this.groupBox2.Controls.Add(this.btnHHLog);
-            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.btnEventLog);
             this.groupBox2.Controls.Add(this.btnDayGraph);
             this.groupBox2.Controls.Add(this.lblEventLogRecs);
@@ -303,19 +305,20 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(363, 31);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(418, 154);
+            this.groupBox2.Size = new System.Drawing.Size(418, 94);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Графики";
             // 
-            // ClearEventLog
+            // btnClearEventLog
             // 
-            this.ClearEventLog.Location = new System.Drawing.Point(333, 50);
-            this.ClearEventLog.Name = "ClearEventLog";
-            this.ClearEventLog.Size = new System.Drawing.Size(75, 23);
-            this.ClearEventLog.TabIndex = 8;
-            this.ClearEventLog.Text = "Очистить";
-            this.ClearEventLog.UseVisualStyleBackColor = true;
+            this.btnClearEventLog.Location = new System.Drawing.Point(333, 50);
+            this.btnClearEventLog.Name = "btnClearEventLog";
+            this.btnClearEventLog.Size = new System.Drawing.Size(75, 23);
+            this.btnClearEventLog.TabIndex = 8;
+            this.btnClearEventLog.Text = "Очистить";
+            this.btnClearEventLog.UseVisualStyleBackColor = true;
+            this.btnClearEventLog.Click += new System.EventHandler(this.ClearEventLog_Click);
             // 
             // btnClearDayGraph
             // 
@@ -325,34 +328,7 @@
             this.btnClearDayGraph.TabIndex = 6;
             this.btnClearDayGraph.Text = "Очистить";
             this.btnClearDayGraph.UseVisualStyleBackColor = true;
-            // 
-            // lblHHLogRecs
-            // 
-            this.lblHHLogRecs.AutoSize = true;
-            this.lblHHLogRecs.Location = new System.Drawing.Point(212, 85);
-            this.lblHHLogRecs.Name = "lblHHLogRecs";
-            this.lblHHLogRecs.Size = new System.Drawing.Size(19, 13);
-            this.lblHHLogRecs.TabIndex = 5;
-            this.lblHHLogRecs.Text = "30";
-            this.lblHHLogRecs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnHHLog
-            // 
-            this.btnHHLog.Location = new System.Drawing.Point(252, 80);
-            this.btnHHLog.Name = "btnHHLog";
-            this.btnHHLog.Size = new System.Drawing.Size(75, 23);
-            this.btnHHLog.TabIndex = 7;
-            this.btnHHLog.Text = "Смотреть";
-            this.btnHHLog.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 84);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(168, 13);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Записей получасового графика";
+            this.btnClearDayGraph.Click += new System.EventHandler(this.btnClearDayGraph_Click);
             // 
             // btnEventLog
             // 
@@ -379,7 +355,7 @@
             this.lblEventLogRecs.Name = "lblEventLogRecs";
             this.lblEventLogRecs.Size = new System.Drawing.Size(25, 13);
             this.lblEventLogRecs.TabIndex = 6;
-            this.lblEventLogRecs.Text = "800";
+            this.lblEventLogRecs.Text = "------";
             this.lblEventLogRecs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
@@ -396,9 +372,9 @@
             this.lblDayGraphRecs.AutoSize = true;
             this.lblDayGraphRecs.Location = new System.Drawing.Point(212, 27);
             this.lblDayGraphRecs.Name = "lblDayGraphRecs";
-            this.lblDayGraphRecs.Size = new System.Drawing.Size(19, 13);
+            this.lblDayGraphRecs.Size = new System.Drawing.Size(25, 13);
             this.lblDayGraphRecs.TabIndex = 5;
-            this.lblDayGraphRecs.Text = "11";
+            this.lblDayGraphRecs.Text = "------";
             this.lblDayGraphRecs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
@@ -991,10 +967,18 @@
             // 
             // соединениеToolStripMenuItem
             // 
+            this.соединениеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.последовательныйПортToolStripMenuItem});
             this.соединениеToolStripMenuItem.Name = "соединениеToolStripMenuItem";
             this.соединениеToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.соединениеToolStripMenuItem.Text = "Соединение";
-            this.соединениеToolStripMenuItem.Click += new System.EventHandler(this.соединениеToolStripMenuItem_Click);
+            // 
+            // последовательныйПортToolStripMenuItem
+            // 
+            this.последовательныйПортToolStripMenuItem.Name = "последовательныйПортToolStripMenuItem";
+            this.последовательныйПортToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.последовательныйПортToolStripMenuItem.Text = "Последовательный порт";
+            this.последовательныйПортToolStripMenuItem.Click += new System.EventHandler(this.последовательныйПортToolStripMenuItem_Click);
             // 
             // инструментыToolStripMenuItem
             // 
@@ -1007,7 +991,7 @@
             // картаСегментовToolStripMenuItem
             // 
             this.картаСегментовToolStripMenuItem.Name = "картаСегментовToolStripMenuItem";
-            this.картаСегментовToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.картаСегментовToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.картаСегментовToolStripMenuItem.Text = "Карта сегментов";
             this.картаСегментовToolStripMenuItem.Click += new System.EventHandler(this.картаСегментовToolStripMenuItem_Click);
             // 
@@ -1042,11 +1026,72 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnSyncTime);
+            this.groupBox4.Controls.Add(this.lblMeterTime);
+            this.groupBox4.Controls.Add(this.label34);
+            this.groupBox4.Controls.Add(this.lblCurrTime);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Location = new System.Drawing.Point(362, 131);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(419, 54);
+            this.groupBox4.TabIndex = 10;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Время";
+            // 
+            // btnSyncTime
+            // 
+            this.btnSyncTime.Location = new System.Drawing.Point(253, 19);
+            this.btnSyncTime.Name = "btnSyncTime";
+            this.btnSyncTime.Size = new System.Drawing.Size(115, 23);
+            this.btnSyncTime.TabIndex = 4;
+            this.btnSyncTime.Text = "Синхронизировать";
+            this.btnSyncTime.UseVisualStyleBackColor = true;
+            this.btnSyncTime.Click += new System.EventHandler(this.btnSyncTime_Click);
+            // 
+            // lblMeterTime
+            // 
+            this.lblMeterTime.AutoSize = true;
+            this.lblMeterTime.Location = new System.Drawing.Point(188, 25);
+            this.lblMeterTime.Name = "lblMeterTime";
+            this.lblMeterTime.Size = new System.Drawing.Size(25, 13);
+            this.lblMeterTime.TabIndex = 3;
+            this.lblMeterTime.Text = "------";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(135, 25);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(47, 13);
+            this.label34.TabIndex = 2;
+            this.label34.Text = "Счетчик";
+            // 
+            // lblCurrTime
+            // 
+            this.lblCurrTime.AutoSize = true;
+            this.lblCurrTime.Location = new System.Drawing.Point(65, 25);
+            this.lblCurrTime.Name = "lblCurrTime";
+            this.lblCurrTime.Size = new System.Drawing.Size(49, 13);
+            this.lblCurrTime.TabIndex = 1;
+            this.lblCurrTime.Text = "00:00:00";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Текущее";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 577);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnUpdateInfo);
             this.Controls.Add(this.groupBox3);
@@ -1074,6 +1119,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1093,11 +1140,8 @@
         private System.Windows.Forms.RichTextBox rtbLog;
         private System.Windows.Forms.Button btnNetConfig;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button ClearEventLog;
+        private System.Windows.Forms.Button btnClearEventLog;
         private System.Windows.Forms.Button btnClearDayGraph;
-        private System.Windows.Forms.Label lblHHLogRecs;
-        private System.Windows.Forms.Button btnHHLog;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnEventLog;
         private System.Windows.Forms.Button btnDayGraph;
         private System.Windows.Forms.Label lblEventLogRecs;
@@ -1159,5 +1203,12 @@
         private System.Windows.Forms.ToolStripMenuItem соединениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem инструментыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem картаСегментовToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem последовательныйПортToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnSyncTime;
+        private System.Windows.Forms.Label lblMeterTime;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lblCurrTime;
+        private System.Windows.Forms.Label label7;
     }
 }

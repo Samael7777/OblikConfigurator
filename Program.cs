@@ -9,6 +9,16 @@ namespace OblikConfigurator
 {
     public delegate void Action();
 
+    /// <summary>
+    /// статус соединения
+    /// </summary>
+    internal enum ConnectionStatus
+    {
+        OK,
+        Wait,
+        Error,
+    }
+
     internal static class Program
     {
 

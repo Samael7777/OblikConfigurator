@@ -49,6 +49,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbBaudrate = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.rb485 = new System.Windows.Forms.RadioButton();
+            this.rb232 = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numAddr)).BeginInit();
             this.tcConnect.SuspendLayout();
             this.tDirect.SuspendLayout();
@@ -60,7 +63,7 @@
             // lblPort
             // 
             this.lblPort.AutoSize = true;
-            this.lblPort.Location = new System.Drawing.Point(43, 28);
+            this.lblPort.Location = new System.Drawing.Point(13, 52);
             this.lblPort.Name = "lblPort";
             this.lblPort.Size = new System.Drawing.Size(32, 13);
             this.lblPort.TabIndex = 0;
@@ -69,7 +72,7 @@
             // lblAddr
             // 
             this.lblAddr.AutoSize = true;
-            this.lblAddr.Location = new System.Drawing.Point(9, 52);
+            this.lblAddr.Location = new System.Drawing.Point(13, 77);
             this.lblAddr.Name = "lblAddr";
             this.lblAddr.Size = new System.Drawing.Size(66, 13);
             this.lblAddr.TabIndex = 1;
@@ -79,11 +82,10 @@
             // 
             this.cbPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPort.FormattingEnabled = true;
-            this.cbPort.Location = new System.Drawing.Point(81, 26);
+            this.cbPort.Location = new System.Drawing.Point(85, 49);
             this.cbPort.Name = "cbPort";
             this.cbPort.Size = new System.Drawing.Size(82, 21);
             this.cbPort.TabIndex = 2;
-            this.cbPort.SelectedIndexChanged += new System.EventHandler(this.cbPort_SelectedIndexChanged);
             // 
             // btnConnect
             // 
@@ -108,7 +110,7 @@
             // numAddr
             // 
             this.numAddr.Hexadecimal = true;
-            this.numAddr.Location = new System.Drawing.Point(81, 52);
+            this.numAddr.Location = new System.Drawing.Point(85, 75);
             this.numAddr.Maximum = new decimal(new int[] {
             255,
             0,
@@ -122,7 +124,6 @@
             0,
             0,
             0});
-            this.numAddr.ValueChanged += new System.EventHandler(this.numAddr_ValueChanged);
             // 
             // tcConnect
             // 
@@ -137,6 +138,9 @@
             // 
             // tDirect
             // 
+            this.tDirect.Controls.Add(this.label5);
+            this.tDirect.Controls.Add(this.rb232);
+            this.tDirect.Controls.Add(this.rb485);
             this.tDirect.Controls.Add(this.btnUpdate);
             this.tDirect.Controls.Add(this.cbPort);
             this.tDirect.Controls.Add(this.numAddr);
@@ -154,7 +158,7 @@
             // 
             this.btnUpdate.BackgroundImage = global::OblikConfigurator.Properties.Resources.refresh_23x23;
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdate.Location = new System.Drawing.Point(169, 25);
+            this.btnUpdate.Location = new System.Drawing.Point(173, 48);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(0);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(23, 23);
@@ -201,7 +205,6 @@
             this.tbPassword.TabIndex = 11;
             this.tbPassword.UseSystemPasswordChar = true;
             this.tbPassword.WordWrap = false;
-            this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             // 
             // label4
             // 
@@ -225,8 +228,7 @@
             this.cbAccess.Name = "cbAccess";
             this.cbAccess.Size = new System.Drawing.Size(209, 21);
             this.cbAccess.TabIndex = 9;
-            this.cbAccess.SelectedIndexChanged += new System.EventHandler(this.cbAccess_SelectedIndexChanged);
-            // 
+                       // 
             // lAccess
             // 
             this.lAccess.AutoSize = true;
@@ -247,7 +249,6 @@
             this.nRepeats.Name = "nRepeats";
             this.nRepeats.Size = new System.Drawing.Size(120, 20);
             this.nRepeats.TabIndex = 6;
-            this.nRepeats.ValueChanged += new System.EventHandler(this.nRepeats_ValueChanged);
             // 
             // label2
             // 
@@ -269,7 +270,6 @@
             this.nTimeout.Name = "nTimeout";
             this.nTimeout.Size = new System.Drawing.Size(120, 20);
             this.nTimeout.TabIndex = 4;
-            this.nTimeout.ValueChanged += new System.EventHandler(this.nTimeout_ValueChanged);
             // 
             // label3
             // 
@@ -288,7 +288,6 @@
             this.cbBaudrate.Name = "cbBaudrate";
             this.cbBaudrate.Size = new System.Drawing.Size(121, 21);
             this.cbBaudrate.TabIndex = 1;
-            this.cbBaudrate.SelectedIndexChanged += new System.EventHandler(this.cbBaudrate_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -298,6 +297,39 @@
             this.label1.Size = new System.Drawing.Size(142, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Скорость соединения, бод";
+            // 
+            // rb485
+            // 
+            this.rb485.AutoSize = true;
+            this.rb485.Location = new System.Drawing.Point(85, 16);
+            this.rb485.Name = "rb485";
+            this.rb485.Size = new System.Drawing.Size(61, 17);
+            this.rb485.TabIndex = 8;
+            this.rb485.TabStop = true;
+            this.rb485.Text = "RS-485";
+            this.rb485.UseVisualStyleBackColor = true;
+            this.rb485.CheckedChanged += new System.EventHandler(this.rb485_CheckedChanged);
+            // 
+            // rb232
+            // 
+            this.rb232.AutoSize = true;
+            this.rb232.Location = new System.Drawing.Point(152, 16);
+            this.rb232.Name = "rb232";
+            this.rb232.Size = new System.Drawing.Size(61, 17);
+            this.rb232.TabIndex = 9;
+            this.rb232.TabStop = true;
+            this.rb232.Text = "RS-232";
+            this.rb232.UseVisualStyleBackColor = true;
+            this.rb232.CheckedChanged += new System.EventHandler(this.rb232_CheckedChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Протокол";
             // 
             // frmConnect
             // 
@@ -346,6 +378,9 @@
         private System.Windows.Forms.NumericUpDown nRepeats;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton rb232;
+        private System.Windows.Forms.RadioButton rb485;
     }
 }
 
