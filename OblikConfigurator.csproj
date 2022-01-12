@@ -68,38 +68,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmConnect.cs">
+    <Compile Include="ConnectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConnect.Designer.cs">
-      <DependentUpon>frmConnect.cs</DependentUpon>
+    <Compile Include="ConnectForm.Designer.cs">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\MainForm.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main\MainForm.Designer.cs">
+    <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSegmenstMap.cs">
+    <Compile Include="SegmenstMapForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSegmenstMap.Designer.cs">
-      <DependentUpon>frmSegmenstMap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Main\MainUtils.cs">
-      <SubType>Form</SubType>
+    <Compile Include="SegmenstMapForm.Designer.cs">
+      <DependentUpon>SegmenstMapForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="frmConnect.resx">
-      <DependentUpon>frmConnect.cs</DependentUpon>
+    <EmbeddedResource Include="ConnectForm.resx">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\MainForm.resx">
+    <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSegmenstMap.resx">
-      <DependentUpon>frmSegmenstMap.cs</DependentUpon>
+    <EmbeddedResource Include="SegmenstMapForm.resx">
+      <DependentUpon>SegmenstMapForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

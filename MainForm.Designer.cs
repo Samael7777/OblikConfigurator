@@ -1,6 +1,6 @@
 ﻿namespace OblikConfigurator
 {
-    partial class frmMain
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,24 +41,26 @@
             this.lblPort = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.btnNetConfig = new System.Windows.Forms.Button();
+            this.NetConfigButton = new System.Windows.Forms.Button();
             this.rtbLog = new System.Windows.Forms.RichTextBox();
+            this.LogMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.очиститьОкноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnClearEventLog = new System.Windows.Forms.Button();
-            this.btnClearDayGraph = new System.Windows.Forms.Button();
-            this.btnEventLog = new System.Windows.Forms.Button();
-            this.btnDayGraph = new System.Windows.Forms.Button();
-            this.lblEventLogRecs = new System.Windows.Forms.Label();
+            this.ClearEventLogButton = new System.Windows.Forms.Button();
+            this.ClearDayGraphButton = new System.Windows.Forms.Button();
+            this.EventLogButton = new System.Windows.Forms.Button();
+            this.DayGraphButton = new System.Windows.Forms.Button();
+            this.EventLogRecsLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblDayGraphRecs = new System.Windows.Forms.Label();
+            this.DayGraphRecsLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label26 = new System.Windows.Forms.Label();
+            this.Channel1Label = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -67,59 +69,60 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.Channel2Label = new System.Windows.Forms.Label();
+            this.Channel3Label = new System.Windows.Forms.Label();
+            this.Channel4Label = new System.Windows.Forms.Label();
+            this.Channel5Label = new System.Windows.Forms.Label();
+            this.Channel6Label = new System.Windows.Forms.Label();
+            this.Channel7Label = new System.Windows.Forms.Label();
+            this.Channel8Label = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblCos = new System.Windows.Forms.Label();
+            this.CosLabel = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.lblQ = new System.Windows.Forms.Label();
+            this.ReaPowerLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblP = new System.Windows.Forms.Label();
+            this.ActPowerLabel = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.lblFreq = new System.Windows.Forms.Label();
+            this.FreqLabel = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblIc = new System.Windows.Forms.Label();
-            this.lblIb = new System.Windows.Forms.Label();
-            this.lblIa = new System.Windows.Forms.Label();
+            this.IcLabel = new System.Windows.Forms.Label();
+            this.IbLabel = new System.Windows.Forms.Label();
+            this.IaLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblUc = new System.Windows.Forms.Label();
-            this.lblUb = new System.Windows.Forms.Label();
-            this.lblUa = new System.Windows.Forms.Label();
+            this.UcLabel = new System.Windows.Forms.Label();
+            this.UbLabel = new System.Windows.Forms.Label();
+            this.UaLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.chbAutoUpdate = new System.Windows.Forms.CheckBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.AutoUpdateCheckbox = new System.Windows.Forms.CheckBox();
+            this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.соединениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.последовательныйПортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ConnectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.инструментыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.картаСегментовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tmrTimer = new System.Windows.Forms.Timer(this.components);
-            this.btnUpdateInfo = new System.Windows.Forms.Button();
+            this.AutoupdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.UpdateInfoButton = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnSyncTime = new System.Windows.Forms.Button();
-            this.lblMeterTime = new System.Windows.Forms.Label();
+            this.SyncTimeButton = new System.Windows.Forms.Button();
+            this.MeterTimeLabel = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.lblCurrTime = new System.Windows.Forms.Label();
+            this.CurrentTimeLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.LogMenu.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.MainMenu.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,7 +151,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel4);
-            this.groupBox1.Controls.Add(this.btnNetConfig);
+            this.groupBox1.Controls.Add(this.NetConfigButton);
             this.groupBox1.Location = new System.Drawing.Point(12, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(344, 154);
@@ -270,21 +273,22 @@
             this.lblAddress.Text = "------";
             this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnNetConfig
+            // NetConfigButton
             // 
-            this.btnNetConfig.Location = new System.Drawing.Point(12, 125);
-            this.btnNetConfig.Name = "btnNetConfig";
-            this.btnNetConfig.Size = new System.Drawing.Size(115, 23);
-            this.btnNetConfig.TabIndex = 5;
-            this.btnNetConfig.Text = "Настройка сети";
-            this.btnNetConfig.UseVisualStyleBackColor = true;
-            this.btnNetConfig.Click += new System.EventHandler(this.btnNetConfig_Click);
+            this.NetConfigButton.Location = new System.Drawing.Point(12, 125);
+            this.NetConfigButton.Name = "NetConfigButton";
+            this.NetConfigButton.Size = new System.Drawing.Size(115, 23);
+            this.NetConfigButton.TabIndex = 5;
+            this.NetConfigButton.Text = "Настройка сети";
+            this.NetConfigButton.UseVisualStyleBackColor = true;
+            this.NetConfigButton.Click += new System.EventHandler(this.NetConfigButton_Click);
             // 
             // rtbLog
             // 
             this.rtbLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbLog.ContextMenuStrip = this.LogMenu;
             this.rtbLog.Location = new System.Drawing.Point(0, 484);
             this.rtbLog.Name = "rtbLog";
             this.rtbLog.ReadOnly = true;
@@ -293,15 +297,29 @@
             this.rtbLog.TabIndex = 3;
             this.rtbLog.Text = "";
             // 
+            // LogMenu
+            // 
+            this.LogMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.очиститьОкноToolStripMenuItem});
+            this.LogMenu.Name = "LogMenu";
+            this.LogMenu.Size = new System.Drawing.Size(157, 26);
+            // 
+            // очиститьОкноToolStripMenuItem
+            // 
+            this.очиститьОкноToolStripMenuItem.Name = "очиститьОкноToolStripMenuItem";
+            this.очиститьОкноToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.очиститьОкноToolStripMenuItem.Text = "Очистить окно";
+            this.очиститьОкноToolStripMenuItem.Click += new System.EventHandler(this.очиститьОкноToolStripMenuItem_Click);
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnClearEventLog);
-            this.groupBox2.Controls.Add(this.btnClearDayGraph);
-            this.groupBox2.Controls.Add(this.btnEventLog);
-            this.groupBox2.Controls.Add(this.btnDayGraph);
-            this.groupBox2.Controls.Add(this.lblEventLogRecs);
+            this.groupBox2.Controls.Add(this.ClearEventLogButton);
+            this.groupBox2.Controls.Add(this.ClearDayGraphButton);
+            this.groupBox2.Controls.Add(this.EventLogButton);
+            this.groupBox2.Controls.Add(this.DayGraphButton);
+            this.groupBox2.Controls.Add(this.EventLogRecsLabel);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.lblDayGraphRecs);
+            this.groupBox2.Controls.Add(this.DayGraphRecsLabel);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(363, 31);
             this.groupBox2.Name = "groupBox2";
@@ -310,53 +328,53 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Графики";
             // 
-            // btnClearEventLog
+            // ClearEventLogButton
             // 
-            this.btnClearEventLog.Location = new System.Drawing.Point(333, 50);
-            this.btnClearEventLog.Name = "btnClearEventLog";
-            this.btnClearEventLog.Size = new System.Drawing.Size(75, 23);
-            this.btnClearEventLog.TabIndex = 8;
-            this.btnClearEventLog.Text = "Очистить";
-            this.btnClearEventLog.UseVisualStyleBackColor = true;
-            this.btnClearEventLog.Click += new System.EventHandler(this.ClearEventLog_Click);
+            this.ClearEventLogButton.Location = new System.Drawing.Point(333, 50);
+            this.ClearEventLogButton.Name = "ClearEventLogButton";
+            this.ClearEventLogButton.Size = new System.Drawing.Size(75, 23);
+            this.ClearEventLogButton.TabIndex = 8;
+            this.ClearEventLogButton.Text = "Очистить";
+            this.ClearEventLogButton.UseVisualStyleBackColor = true;
+            this.ClearEventLogButton.Click += new System.EventHandler(this.ClearEventLog_Click);
             // 
-            // btnClearDayGraph
+            // ClearDayGraphButton
             // 
-            this.btnClearDayGraph.Location = new System.Drawing.Point(333, 22);
-            this.btnClearDayGraph.Name = "btnClearDayGraph";
-            this.btnClearDayGraph.Size = new System.Drawing.Size(75, 23);
-            this.btnClearDayGraph.TabIndex = 6;
-            this.btnClearDayGraph.Text = "Очистить";
-            this.btnClearDayGraph.UseVisualStyleBackColor = true;
-            this.btnClearDayGraph.Click += new System.EventHandler(this.btnClearDayGraph_Click);
+            this.ClearDayGraphButton.Location = new System.Drawing.Point(333, 22);
+            this.ClearDayGraphButton.Name = "ClearDayGraphButton";
+            this.ClearDayGraphButton.Size = new System.Drawing.Size(75, 23);
+            this.ClearDayGraphButton.TabIndex = 6;
+            this.ClearDayGraphButton.Text = "Очистить";
+            this.ClearDayGraphButton.UseVisualStyleBackColor = true;
+            this.ClearDayGraphButton.Click += new System.EventHandler(this.btnClearDayGraph_Click);
             // 
-            // btnEventLog
+            // EventLogButton
             // 
-            this.btnEventLog.Location = new System.Drawing.Point(252, 51);
-            this.btnEventLog.Name = "btnEventLog";
-            this.btnEventLog.Size = new System.Drawing.Size(75, 23);
-            this.btnEventLog.TabIndex = 5;
-            this.btnEventLog.Text = "Смотреть";
-            this.btnEventLog.UseVisualStyleBackColor = true;
+            this.EventLogButton.Location = new System.Drawing.Point(252, 51);
+            this.EventLogButton.Name = "EventLogButton";
+            this.EventLogButton.Size = new System.Drawing.Size(75, 23);
+            this.EventLogButton.TabIndex = 5;
+            this.EventLogButton.Text = "Смотреть";
+            this.EventLogButton.UseVisualStyleBackColor = true;
             // 
-            // btnDayGraph
+            // DayGraphButton
             // 
-            this.btnDayGraph.Location = new System.Drawing.Point(252, 22);
-            this.btnDayGraph.Name = "btnDayGraph";
-            this.btnDayGraph.Size = new System.Drawing.Size(75, 23);
-            this.btnDayGraph.TabIndex = 5;
-            this.btnDayGraph.Text = "Смотреть";
-            this.btnDayGraph.UseVisualStyleBackColor = true;
+            this.DayGraphButton.Location = new System.Drawing.Point(252, 22);
+            this.DayGraphButton.Name = "DayGraphButton";
+            this.DayGraphButton.Size = new System.Drawing.Size(75, 23);
+            this.DayGraphButton.TabIndex = 5;
+            this.DayGraphButton.Text = "Смотреть";
+            this.DayGraphButton.UseVisualStyleBackColor = true;
             // 
             // lblEventLogRecs
             // 
-            this.lblEventLogRecs.AutoSize = true;
-            this.lblEventLogRecs.Location = new System.Drawing.Point(212, 56);
-            this.lblEventLogRecs.Name = "lblEventLogRecs";
-            this.lblEventLogRecs.Size = new System.Drawing.Size(25, 13);
-            this.lblEventLogRecs.TabIndex = 6;
-            this.lblEventLogRecs.Text = "------";
-            this.lblEventLogRecs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EventLogRecsLabel.AutoSize = true;
+            this.EventLogRecsLabel.Location = new System.Drawing.Point(212, 56);
+            this.EventLogRecsLabel.Name = "lblEventLogRecs";
+            this.EventLogRecsLabel.Size = new System.Drawing.Size(25, 13);
+            this.EventLogRecsLabel.TabIndex = 6;
+            this.EventLogRecsLabel.Text = "------";
+            this.EventLogRecsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
@@ -369,13 +387,13 @@
             // 
             // lblDayGraphRecs
             // 
-            this.lblDayGraphRecs.AutoSize = true;
-            this.lblDayGraphRecs.Location = new System.Drawing.Point(212, 27);
-            this.lblDayGraphRecs.Name = "lblDayGraphRecs";
-            this.lblDayGraphRecs.Size = new System.Drawing.Size(25, 13);
-            this.lblDayGraphRecs.TabIndex = 5;
-            this.lblDayGraphRecs.Text = "------";
-            this.lblDayGraphRecs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DayGraphRecsLabel.AutoSize = true;
+            this.DayGraphRecsLabel.Location = new System.Drawing.Point(212, 27);
+            this.DayGraphRecsLabel.Name = "lblDayGraphRecs";
+            this.DayGraphRecsLabel.Size = new System.Drawing.Size(25, 13);
+            this.DayGraphRecsLabel.TabIndex = 5;
+            this.DayGraphRecsLabel.Text = "------";
+            this.DayGraphRecsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
@@ -390,7 +408,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.lblStatus});
+            this.StatusLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 555);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(788, 22);
@@ -403,12 +421,12 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(137, 17);
             this.toolStripStatusLabel1.Text = "Состояние соединения:";
             // 
-            // lblStatus
+            // StatusLabel
             // 
-            this.lblStatus.BackColor = System.Drawing.Color.LimeGreen;
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(23, 17);
-            this.lblStatus.Text = "ОК";
+            this.StatusLabel.BackColor = System.Drawing.Color.LimeGreen;
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(23, 17);
+            this.StatusLabel.Text = "ОК";
             // 
             // groupBox3
             // 
@@ -416,7 +434,7 @@
             this.groupBox3.Controls.Add(this.tableLayoutPanel3);
             this.groupBox3.Controls.Add(this.tableLayoutPanel2);
             this.groupBox3.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox3.Controls.Add(this.chbAutoUpdate);
+            this.groupBox3.Controls.Add(this.AutoUpdateCheckbox);
             this.groupBox3.Location = new System.Drawing.Point(12, 191);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(769, 258);
@@ -443,7 +461,7 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.33333F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.66667F));
-            this.tableLayoutPanel3.Controls.Add(this.label26, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.Channel1Label, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.label23, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.label21, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.label19, 0, 1);
@@ -452,13 +470,13 @@
             this.tableLayoutPanel3.Controls.Add(this.label20, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.label22, 0, 6);
             this.tableLayoutPanel3.Controls.Add(this.label24, 0, 7);
-            this.tableLayoutPanel3.Controls.Add(this.label27, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label28, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label29, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.label30, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.label31, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.label32, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.label33, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(this.Channel2Label, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.Channel3Label, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.Channel4Label, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.Channel5Label, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.Channel6Label, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.Channel7Label, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.Channel8Label, 1, 7);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(645, 53);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 8;
@@ -474,18 +492,18 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(113, 171);
             this.tableLayoutPanel3.TabIndex = 10;
             // 
-            // label26
+            // Channel1Label
             // 
-            this.label26.AutoSize = true;
-            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label26.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label26.Location = new System.Drawing.Point(58, 2);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(50, 19);
-            this.label26.TabIndex = 19;
-            this.label26.Text = "0";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Channel1Label.AutoSize = true;
+            this.Channel1Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Channel1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Channel1Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Channel1Label.Location = new System.Drawing.Point(58, 2);
+            this.Channel1Label.Name = "Channel1Label";
+            this.Channel1Label.Size = new System.Drawing.Size(50, 19);
+            this.Channel1Label.TabIndex = 19;
+            this.Channel1Label.Text = "0";
+            this.Channel1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label23
             // 
@@ -583,96 +601,96 @@
             this.label24.Text = "8";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label27
+            // Channel2Label
             // 
-            this.label27.AutoSize = true;
-            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label27.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label27.Location = new System.Drawing.Point(58, 23);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(50, 19);
-            this.label27.TabIndex = 20;
-            this.label27.Text = "0";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Channel2Label.AutoSize = true;
+            this.Channel2Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Channel2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Channel2Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Channel2Label.Location = new System.Drawing.Point(58, 23);
+            this.Channel2Label.Name = "Channel2Label";
+            this.Channel2Label.Size = new System.Drawing.Size(50, 19);
+            this.Channel2Label.TabIndex = 20;
+            this.Channel2Label.Text = "0";
+            this.Channel2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label28
+            // Channel3Label
             // 
-            this.label28.AutoSize = true;
-            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label28.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label28.Location = new System.Drawing.Point(58, 44);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(50, 19);
-            this.label28.TabIndex = 21;
-            this.label28.Text = "0";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Channel3Label.AutoSize = true;
+            this.Channel3Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Channel3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Channel3Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Channel3Label.Location = new System.Drawing.Point(58, 44);
+            this.Channel3Label.Name = "Channel3Label";
+            this.Channel3Label.Size = new System.Drawing.Size(50, 19);
+            this.Channel3Label.TabIndex = 21;
+            this.Channel3Label.Text = "0";
+            this.Channel3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label29
+            // Channel4Label
             // 
-            this.label29.AutoSize = true;
-            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label29.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label29.Location = new System.Drawing.Point(58, 65);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(50, 19);
-            this.label29.TabIndex = 22;
-            this.label29.Text = "0";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Channel4Label.AutoSize = true;
+            this.Channel4Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Channel4Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Channel4Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Channel4Label.Location = new System.Drawing.Point(58, 65);
+            this.Channel4Label.Name = "Channel4Label";
+            this.Channel4Label.Size = new System.Drawing.Size(50, 19);
+            this.Channel4Label.TabIndex = 22;
+            this.Channel4Label.Text = "0";
+            this.Channel4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label30
+            // Channel5Label
             // 
-            this.label30.AutoSize = true;
-            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label30.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label30.Location = new System.Drawing.Point(58, 86);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(50, 19);
-            this.label30.TabIndex = 23;
-            this.label30.Text = "0";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Channel5Label.AutoSize = true;
+            this.Channel5Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Channel5Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Channel5Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Channel5Label.Location = new System.Drawing.Point(58, 86);
+            this.Channel5Label.Name = "Channel5Label";
+            this.Channel5Label.Size = new System.Drawing.Size(50, 19);
+            this.Channel5Label.TabIndex = 23;
+            this.Channel5Label.Text = "0";
+            this.Channel5Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label31
+            // Channel6Label
             // 
-            this.label31.AutoSize = true;
-            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label31.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label31.Location = new System.Drawing.Point(58, 107);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(50, 19);
-            this.label31.TabIndex = 24;
-            this.label31.Text = "0";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Channel6Label.AutoSize = true;
+            this.Channel6Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Channel6Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Channel6Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Channel6Label.Location = new System.Drawing.Point(58, 107);
+            this.Channel6Label.Name = "Channel6Label";
+            this.Channel6Label.Size = new System.Drawing.Size(50, 19);
+            this.Channel6Label.TabIndex = 24;
+            this.Channel6Label.Text = "0";
+            this.Channel6Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label32
+            // Channel7Label
             // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label32.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label32.Location = new System.Drawing.Point(58, 128);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(50, 19);
-            this.label32.TabIndex = 25;
-            this.label32.Text = "0";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Channel7Label.AutoSize = true;
+            this.Channel7Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Channel7Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Channel7Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Channel7Label.Location = new System.Drawing.Point(58, 128);
+            this.Channel7Label.Name = "Channel7Label";
+            this.Channel7Label.Size = new System.Drawing.Size(50, 19);
+            this.Channel7Label.TabIndex = 25;
+            this.Channel7Label.Text = "0";
+            this.Channel7Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label33
+            // Channel8Label
             // 
-            this.label33.AutoSize = true;
-            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label33.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label33.Location = new System.Drawing.Point(58, 149);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(50, 20);
-            this.label33.TabIndex = 26;
-            this.label33.Text = "0";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Channel8Label.AutoSize = true;
+            this.Channel8Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Channel8Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Channel8Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Channel8Label.Location = new System.Drawing.Point(58, 149);
+            this.Channel8Label.Name = "Channel8Label";
+            this.Channel8Label.Size = new System.Drawing.Size(50, 20);
+            this.Channel8Label.TabIndex = 26;
+            this.Channel8Label.Text = "0";
+            this.Channel8Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -682,13 +700,13 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.68122F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.65939F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.50985F));
-            this.tableLayoutPanel2.Controls.Add(this.lblCos, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.CosLabel, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.label16, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblQ, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.ReaPowerLabel, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label9, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblP, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.ActPowerLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label14, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblFreq, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.FreqLabel, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.label15, 3, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 124);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -698,16 +716,16 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(627, 100);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
-            // lblCos
+            // CosLabel
             // 
-            this.lblCos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblCos.Location = new System.Drawing.Point(340, 51);
-            this.lblCos.Name = "lblCos";
-            this.lblCos.Size = new System.Drawing.Size(137, 47);
-            this.lblCos.TabIndex = 9;
-            this.lblCos.Text = "0,00";
-            this.lblCos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CosLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CosLabel.Location = new System.Drawing.Point(340, 51);
+            this.CosLabel.Name = "CosLabel";
+            this.CosLabel.Size = new System.Drawing.Size(137, 47);
+            this.CosLabel.TabIndex = 9;
+            this.CosLabel.Text = "0,00";
+            this.CosLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label16
             // 
@@ -720,16 +738,16 @@
             this.label16.Text = "Cos f";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblQ
+            // ReaPowerLabel
             // 
-            this.lblQ.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblQ.Location = new System.Drawing.Point(172, 51);
-            this.lblQ.Name = "lblQ";
-            this.lblQ.Size = new System.Drawing.Size(160, 47);
-            this.lblQ.TabIndex = 9;
-            this.lblQ.Text = "0,00";
-            this.lblQ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ReaPowerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReaPowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReaPowerLabel.Location = new System.Drawing.Point(172, 51);
+            this.ReaPowerLabel.Name = "ReaPowerLabel";
+            this.ReaPowerLabel.Size = new System.Drawing.Size(160, 47);
+            this.ReaPowerLabel.TabIndex = 9;
+            this.ReaPowerLabel.Text = "0,00";
+            this.ReaPowerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
@@ -742,16 +760,16 @@
             this.label9.Text = "Реактивная мощность, квар";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblP
+            // ActPowerLabel
             // 
-            this.lblP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblP.Location = new System.Drawing.Point(5, 51);
-            this.lblP.Name = "lblP";
-            this.lblP.Size = new System.Drawing.Size(159, 47);
-            this.lblP.TabIndex = 9;
-            this.lblP.Text = "0,00";
-            this.lblP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ActPowerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ActPowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ActPowerLabel.Location = new System.Drawing.Point(5, 51);
+            this.ActPowerLabel.Name = "ActPowerLabel";
+            this.ActPowerLabel.Size = new System.Drawing.Size(159, 47);
+            this.ActPowerLabel.TabIndex = 9;
+            this.ActPowerLabel.Text = "0,00";
+            this.ActPowerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
             // 
@@ -764,16 +782,16 @@
             this.label14.Text = "Активная мощность, кВт";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblFreq
+            // FreqLabel
             // 
-            this.lblFreq.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFreq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblFreq.Location = new System.Drawing.Point(485, 51);
-            this.lblFreq.Name = "lblFreq";
-            this.lblFreq.Size = new System.Drawing.Size(137, 47);
-            this.lblFreq.TabIndex = 9;
-            this.lblFreq.Text = "0,00";
-            this.lblFreq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FreqLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FreqLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FreqLabel.Location = new System.Drawing.Point(485, 51);
+            this.FreqLabel.Name = "FreqLabel";
+            this.FreqLabel.Size = new System.Drawing.Size(137, 47);
+            this.FreqLabel.TabIndex = 9;
+            this.FreqLabel.Text = "0,00";
+            this.FreqLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -794,14 +812,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.1308F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.4346F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.4346F));
-            this.tableLayoutPanel1.Controls.Add(this.lblIc, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblIb, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblIa, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.IcLabel, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.IbLabel, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.IaLabel, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label13, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblUc, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblUb, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblUa, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.UcLabel, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.UbLabel, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.UaLabel, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label11, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label12, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label10, 1, 0);
@@ -815,38 +833,38 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(627, 99);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
-            // lblIc
+            // IcLabel
             // 
-            this.lblIc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblIc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblIc.Location = new System.Drawing.Point(485, 66);
-            this.lblIc.Name = "lblIc";
-            this.lblIc.Size = new System.Drawing.Size(137, 31);
-            this.lblIc.TabIndex = 9;
-            this.lblIc.Text = "0,00";
-            this.lblIc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.IcLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IcLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IcLabel.Location = new System.Drawing.Point(485, 66);
+            this.IcLabel.Name = "IcLabel";
+            this.IcLabel.Size = new System.Drawing.Size(137, 31);
+            this.IcLabel.TabIndex = 9;
+            this.IcLabel.Text = "0,00";
+            this.IcLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblIb
+            // IbLabel
             // 
-            this.lblIb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblIb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblIb.Location = new System.Drawing.Point(341, 66);
-            this.lblIb.Name = "lblIb";
-            this.lblIb.Size = new System.Drawing.Size(136, 31);
-            this.lblIb.TabIndex = 9;
-            this.lblIb.Text = "0,00";
-            this.lblIb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.IbLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IbLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IbLabel.Location = new System.Drawing.Point(341, 66);
+            this.IbLabel.Name = "IbLabel";
+            this.IbLabel.Size = new System.Drawing.Size(136, 31);
+            this.IbLabel.TabIndex = 9;
+            this.IbLabel.Text = "0,00";
+            this.IbLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblIa
+            // IaLabel
             // 
-            this.lblIa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblIa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblIa.Location = new System.Drawing.Point(172, 66);
-            this.lblIa.Name = "lblIa";
-            this.lblIa.Size = new System.Drawing.Size(161, 31);
-            this.lblIa.TabIndex = 9;
-            this.lblIa.Text = "0,00";
-            this.lblIa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.IaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IaLabel.Location = new System.Drawing.Point(172, 66);
+            this.IaLabel.Name = "IaLabel";
+            this.IaLabel.Size = new System.Drawing.Size(161, 31);
+            this.IaLabel.TabIndex = 9;
+            this.IaLabel.Text = "0,00";
+            this.IaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
@@ -870,38 +888,38 @@
             this.label8.Text = "Напряжение, В";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblUc
+            // UcLabel
             // 
-            this.lblUc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUc.Location = new System.Drawing.Point(485, 34);
-            this.lblUc.Name = "lblUc";
-            this.lblUc.Size = new System.Drawing.Size(137, 30);
-            this.lblUc.TabIndex = 9;
-            this.lblUc.Text = "0,00";
-            this.lblUc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UcLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UcLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UcLabel.Location = new System.Drawing.Point(485, 34);
+            this.UcLabel.Name = "UcLabel";
+            this.UcLabel.Size = new System.Drawing.Size(137, 30);
+            this.UcLabel.TabIndex = 9;
+            this.UcLabel.Text = "0,00";
+            this.UcLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblUb
+            // UbLabel
             // 
-            this.lblUb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUb.Location = new System.Drawing.Point(341, 34);
-            this.lblUb.Name = "lblUb";
-            this.lblUb.Size = new System.Drawing.Size(136, 30);
-            this.lblUb.TabIndex = 9;
-            this.lblUb.Text = "0,00";
-            this.lblUb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UbLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UbLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UbLabel.Location = new System.Drawing.Point(341, 34);
+            this.UbLabel.Name = "UbLabel";
+            this.UbLabel.Size = new System.Drawing.Size(136, 30);
+            this.UbLabel.TabIndex = 9;
+            this.UbLabel.Text = "0,00";
+            this.UbLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblUa
+            // UaLabel
             // 
-            this.lblUa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUa.Location = new System.Drawing.Point(172, 34);
-            this.lblUa.Name = "lblUa";
-            this.lblUa.Size = new System.Drawing.Size(161, 30);
-            this.lblUa.TabIndex = 9;
-            this.lblUa.Text = "0,00";
-            this.lblUa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UaLabel.Location = new System.Drawing.Point(172, 34);
+            this.UaLabel.Name = "UaLabel";
+            this.UaLabel.Size = new System.Drawing.Size(161, 30);
+            this.UaLabel.TabIndex = 9;
+            this.UaLabel.Text = "0,00";
+            this.UaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -942,43 +960,44 @@
             this.label10.Text = "Фаза A";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chbAutoUpdate
+            // AutoUpdateCheckbox
             // 
-            this.chbAutoUpdate.AutoSize = true;
-            this.chbAutoUpdate.Location = new System.Drawing.Point(9, 230);
-            this.chbAutoUpdate.Name = "chbAutoUpdate";
-            this.chbAutoUpdate.Size = new System.Drawing.Size(110, 17);
-            this.chbAutoUpdate.TabIndex = 8;
-            this.chbAutoUpdate.Text = "Автообновление";
-            this.chbAutoUpdate.UseVisualStyleBackColor = true;
-            this.chbAutoUpdate.CheckedChanged += new System.EventHandler(this.chbAutoUpdate_CheckedChanged);
+            this.AutoUpdateCheckbox.AutoSize = true;
+            this.AutoUpdateCheckbox.Location = new System.Drawing.Point(9, 230);
+            this.AutoUpdateCheckbox.Name = "AutoUpdateCheckbox";
+            this.AutoUpdateCheckbox.Size = new System.Drawing.Size(110, 17);
+            this.AutoUpdateCheckbox.TabIndex = 8;
+            this.AutoUpdateCheckbox.Text = "Автообновление";
+            this.AutoUpdateCheckbox.UseVisualStyleBackColor = true;
+            this.AutoUpdateCheckbox.CheckedChanged += new System.EventHandler(this.chbAutoUpdate_CheckedChanged);
             // 
-            // menuStrip1
+            // MainMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.соединениеToolStripMenuItem,
             this.инструментыToolStripMenuItem,
             this.настройкиToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(788, 24);
-            this.menuStrip1.TabIndex = 7;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MainMenu.Location = new System.Drawing.Point(0, 0);
+            this.MainMenu.Name = "MainMenu";
+            this.MainMenu.Size = new System.Drawing.Size(788, 24);
+            this.MainMenu.TabIndex = 7;
+            this.MainMenu.Text = "menuStrip1";
             // 
             // соединениеToolStripMenuItem
             // 
             this.соединениеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.последовательныйПортToolStripMenuItem});
+            this.ConnectionToolStripMenuItem});
             this.соединениеToolStripMenuItem.Name = "соединениеToolStripMenuItem";
             this.соединениеToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.соединениеToolStripMenuItem.Text = "Соединение";
             // 
-            // последовательныйПортToolStripMenuItem
+            // ConnectionToolStripMenuItem
             // 
-            this.последовательныйПортToolStripMenuItem.Name = "последовательныйПортToolStripMenuItem";
-            this.последовательныйПортToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.последовательныйПортToolStripMenuItem.Text = "Последовательный порт";
-            this.последовательныйПортToolStripMenuItem.Click += new System.EventHandler(this.последовательныйПортToolStripMenuItem_Click);
+            this.ConnectionToolStripMenuItem.Name = "ConnectionToolStripMenuItem";
+            this.ConnectionToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.ConnectionToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.ConnectionToolStripMenuItem.Text = "Настройка соединения";
+            this.ConnectionToolStripMenuItem.Click += new System.EventHandler(this.ConnectionToolStripMenuItem_Click);
             // 
             // инструментыToolStripMenuItem
             // 
@@ -1001,20 +1020,20 @@
             this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.настройкиToolStripMenuItem.Text = "Настройки";
             // 
-            // tmrTimer
+            // AutoupdateTimer
             // 
-            this.tmrTimer.Interval = 1000;
-            this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
+            this.AutoupdateTimer.Interval = 1000;
+            this.AutoupdateTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
             // 
-            // btnUpdateInfo
+            // UpdateInfoButton
             // 
-            this.btnUpdateInfo.Location = new System.Drawing.Point(12, 455);
-            this.btnUpdateInfo.Name = "btnUpdateInfo";
-            this.btnUpdateInfo.Size = new System.Drawing.Size(130, 23);
-            this.btnUpdateInfo.TabIndex = 8;
-            this.btnUpdateInfo.Text = "Обновить инфорацию";
-            this.btnUpdateInfo.UseVisualStyleBackColor = true;
-            this.btnUpdateInfo.Click += new System.EventHandler(this.btnUpdateInfo_Click);
+            this.UpdateInfoButton.Location = new System.Drawing.Point(12, 455);
+            this.UpdateInfoButton.Name = "UpdateInfoButton";
+            this.UpdateInfoButton.Size = new System.Drawing.Size(130, 23);
+            this.UpdateInfoButton.TabIndex = 8;
+            this.UpdateInfoButton.Text = "Обновить инфорацию";
+            this.UpdateInfoButton.UseVisualStyleBackColor = true;
+            this.UpdateInfoButton.Click += new System.EventHandler(this.btnUpdateInfo_Click);
             // 
             // btnExit
             // 
@@ -1024,14 +1043,14 @@
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "Выход";
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.btnSyncTime);
-            this.groupBox4.Controls.Add(this.lblMeterTime);
+            this.groupBox4.Controls.Add(this.SyncTimeButton);
+            this.groupBox4.Controls.Add(this.MeterTimeLabel);
             this.groupBox4.Controls.Add(this.label34);
-            this.groupBox4.Controls.Add(this.lblCurrTime);
+            this.groupBox4.Controls.Add(this.CurrentTimeLabel);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Location = new System.Drawing.Point(362, 131);
             this.groupBox4.Name = "groupBox4";
@@ -1040,24 +1059,24 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Время";
             // 
-            // btnSyncTime
+            // SyncTimeButton
             // 
-            this.btnSyncTime.Location = new System.Drawing.Point(253, 19);
-            this.btnSyncTime.Name = "btnSyncTime";
-            this.btnSyncTime.Size = new System.Drawing.Size(115, 23);
-            this.btnSyncTime.TabIndex = 4;
-            this.btnSyncTime.Text = "Синхронизировать";
-            this.btnSyncTime.UseVisualStyleBackColor = true;
-            this.btnSyncTime.Click += new System.EventHandler(this.btnSyncTime_Click);
+            this.SyncTimeButton.Location = new System.Drawing.Point(253, 19);
+            this.SyncTimeButton.Name = "SyncTimeButton";
+            this.SyncTimeButton.Size = new System.Drawing.Size(115, 23);
+            this.SyncTimeButton.TabIndex = 4;
+            this.SyncTimeButton.Text = "Синхронизировать";
+            this.SyncTimeButton.UseVisualStyleBackColor = true;
+            this.SyncTimeButton.Click += new System.EventHandler(this.btnSyncTime_Click);
             // 
             // lblMeterTime
             // 
-            this.lblMeterTime.AutoSize = true;
-            this.lblMeterTime.Location = new System.Drawing.Point(188, 25);
-            this.lblMeterTime.Name = "lblMeterTime";
-            this.lblMeterTime.Size = new System.Drawing.Size(25, 13);
-            this.lblMeterTime.TabIndex = 3;
-            this.lblMeterTime.Text = "------";
+            this.MeterTimeLabel.AutoSize = true;
+            this.MeterTimeLabel.Location = new System.Drawing.Point(188, 25);
+            this.MeterTimeLabel.Name = "lblMeterTime";
+            this.MeterTimeLabel.Size = new System.Drawing.Size(25, 13);
+            this.MeterTimeLabel.TabIndex = 3;
+            this.MeterTimeLabel.Text = "------";
             // 
             // label34
             // 
@@ -1070,12 +1089,12 @@
             // 
             // lblCurrTime
             // 
-            this.lblCurrTime.AutoSize = true;
-            this.lblCurrTime.Location = new System.Drawing.Point(65, 25);
-            this.lblCurrTime.Name = "lblCurrTime";
-            this.lblCurrTime.Size = new System.Drawing.Size(49, 13);
-            this.lblCurrTime.TabIndex = 1;
-            this.lblCurrTime.Text = "00:00:00";
+            this.CurrentTimeLabel.AutoSize = true;
+            this.CurrentTimeLabel.Location = new System.Drawing.Point(65, 25);
+            this.CurrentTimeLabel.Name = "lblCurrTime";
+            this.CurrentTimeLabel.Size = new System.Drawing.Size(49, 13);
+            this.CurrentTimeLabel.TabIndex = 1;
+            this.CurrentTimeLabel.Text = "00:00:00";
             // 
             // label7
             // 
@@ -1086,27 +1105,30 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Текущее";
             // 
-            // frmMain
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 577);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnUpdateInfo);
+            this.Controls.Add(this.UpdateInfoButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.rtbLog);
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(804, 615);
-            this.Name = "frmMain";
+            this.Name = "MainForm";
             this.Text = "Параметры счетчика ОБЛИК";
-            this.Shown += new System.EventHandler(this.frmMain_Shown);
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
+            this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.LogMenu.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -1117,8 +1139,8 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MainMenu.ResumeLayout(false);
+            this.MainMenu.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
@@ -1138,26 +1160,26 @@
         private System.Windows.Forms.Label lblPort;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox rtbLog;
-        private System.Windows.Forms.Button btnNetConfig;
+        private System.Windows.Forms.Button NetConfigButton;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnClearEventLog;
-        private System.Windows.Forms.Button btnClearDayGraph;
-        private System.Windows.Forms.Button btnEventLog;
-        private System.Windows.Forms.Button btnDayGraph;
-        private System.Windows.Forms.Label lblEventLogRecs;
+        private System.Windows.Forms.Button ClearEventLogButton;
+        private System.Windows.Forms.Button ClearDayGraphButton;
+        private System.Windows.Forms.Button EventLogButton;
+        private System.Windows.Forms.Button DayGraphButton;
+        private System.Windows.Forms.Label EventLogRecsLabel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblDayGraphRecs;
+        private System.Windows.Forms.Label DayGraphRecsLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel lblStatus;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label Channel1Label;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
@@ -1166,36 +1188,36 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label Channel2Label;
+        private System.Windows.Forms.Label Channel3Label;
+        private System.Windows.Forms.Label Channel4Label;
+        private System.Windows.Forms.Label Channel5Label;
+        private System.Windows.Forms.Label Channel6Label;
+        private System.Windows.Forms.Label Channel7Label;
+        private System.Windows.Forms.Label Channel8Label;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label lblCos;
+        private System.Windows.Forms.Label CosLabel;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label lblQ;
+        private System.Windows.Forms.Label ReaPowerLabel;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblP;
+        private System.Windows.Forms.Label ActPowerLabel;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label lblFreq;
+        private System.Windows.Forms.Label FreqLabel;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblIc;
-        private System.Windows.Forms.Label lblIb;
-        private System.Windows.Forms.Label lblIa;
+        private System.Windows.Forms.Label IcLabel;
+        private System.Windows.Forms.Label IbLabel;
+        private System.Windows.Forms.Label IaLabel;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label lblUc;
-        private System.Windows.Forms.Label lblUb;
-        private System.Windows.Forms.Label lblUa;
+        private System.Windows.Forms.Label UcLabel;
+        private System.Windows.Forms.Label UbLabel;
+        private System.Windows.Forms.Label UaLabel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.CheckBox chbAutoUpdate;
-        private System.Windows.Forms.Timer tmrTimer;
-        private System.Windows.Forms.Button btnUpdateInfo;
+        private System.Windows.Forms.CheckBox AutoUpdateCheckbox;
+        private System.Windows.Forms.Timer AutoupdateTimer;
+        private System.Windows.Forms.Button UpdateInfoButton;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label lblBaudrate;
@@ -1203,12 +1225,14 @@
         private System.Windows.Forms.ToolStripMenuItem соединениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem инструментыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem картаСегментовToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem последовательныйПортToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ConnectionToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btnSyncTime;
-        private System.Windows.Forms.Label lblMeterTime;
+        private System.Windows.Forms.Button SyncTimeButton;
+        private System.Windows.Forms.Label MeterTimeLabel;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label lblCurrTime;
+        private System.Windows.Forms.Label CurrentTimeLabel;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ContextMenuStrip LogMenu;
+        private System.Windows.Forms.ToolStripMenuItem очиститьОкноToolStripMenuItem;
     }
 }

@@ -7,8 +7,6 @@ using Oblik;
 
 namespace OblikConfigurator
 {
-    public delegate void Action();
-
     /// <summary>
     /// статус соединения
     /// </summary>
@@ -31,7 +29,7 @@ namespace OblikConfigurator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new MainForm());
         }
     }
 }
