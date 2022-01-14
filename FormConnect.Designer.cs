@@ -1,6 +1,6 @@
 ﻿namespace OblikConfigurator
 {
-    partial class ConnectForm
+    partial class FormConnect
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -36,6 +36,10 @@
             this.AddressNumeric = new System.Windows.Forms.NumericUpDown();
             this.ConnectTabControl = new System.Windows.Forms.TabControl();
             this.DirectPage = new System.Windows.Forms.TabPage();
+            this.PasswordTextbox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.AccessCombobox = new System.Windows.Forms.ComboBox();
+            this.AccessLabel = new System.Windows.Forms.Label();
             this.RepeatsNumeric = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.TimeoutNumeric = new System.Windows.Forms.NumericUpDown();
@@ -47,10 +51,6 @@
             this.Prot485Radiobutton = new System.Windows.Forms.RadioButton();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DBPage = new System.Windows.Forms.TabPage();
-            this.PasswordTextbox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.AccessCombobox = new System.Windows.Forms.ComboBox();
-            this.AccessLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AddressNumeric)).BeginInit();
             this.ConnectTabControl.SuspendLayout();
             this.DirectPage.SuspendLayout();
@@ -58,54 +58,54 @@
             ((System.ComponentModel.ISupportInitialize)(this.TimeoutNumeric)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblPort
+            // PortLabel
             // 
             this.PortLabel.AutoSize = true;
             this.PortLabel.Location = new System.Drawing.Point(13, 52);
-            this.PortLabel.Name = "lblPort";
+            this.PortLabel.Name = "PortLabel";
             this.PortLabel.Size = new System.Drawing.Size(32, 13);
             this.PortLabel.TabIndex = 0;
             this.PortLabel.Text = "Порт";
             // 
-            // lblAddr
+            // AddrLabel
             // 
             this.AddrLabel.AutoSize = true;
             this.AddrLabel.Location = new System.Drawing.Point(13, 77);
-            this.AddrLabel.Name = "lblAddr";
+            this.AddrLabel.Name = "AddrLabel";
             this.AddrLabel.Size = new System.Drawing.Size(66, 13);
             this.AddrLabel.TabIndex = 1;
             this.AddrLabel.Text = "Адрес(HEX)";
             // 
-            // cbPort
+            // PortCombobox
             // 
             this.PortCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PortCombobox.FormattingEnabled = true;
             this.PortCombobox.Location = new System.Drawing.Point(85, 49);
-            this.PortCombobox.Name = "cbPort";
+            this.PortCombobox.Name = "PortCombobox";
             this.PortCombobox.Size = new System.Drawing.Size(82, 21);
             this.PortCombobox.TabIndex = 2;
             // 
-            // btnConnect
+            // ConnectButton
             // 
             this.ConnectButton.Location = new System.Drawing.Point(12, 237);
-            this.ConnectButton.Name = "btnConnect";
+            this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Size = new System.Drawing.Size(151, 23);
             this.ConnectButton.TabIndex = 3;
             this.ConnectButton.Text = "Соединение";
             this.ConnectButton.UseVisualStyleBackColor = true;
             this.ConnectButton.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // btnCancel
+            // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(173, 237);
-            this.CancelButton.Name = "btnCancel";
+            this.CancelButton.Location = new System.Drawing.Point(402, 237);
+            this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(151, 23);
             this.CancelButton.TabIndex = 5;
             this.CancelButton.Text = "Отмена";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // numAddr
+            // AddressNumeric
             // 
             this.AddressNumeric.Hexadecimal = true;
             this.AddressNumeric.Location = new System.Drawing.Point(85, 75);
@@ -114,7 +114,7 @@
             0,
             0,
             0});
-            this.AddressNumeric.Name = "numAddr";
+            this.AddressNumeric.Name = "AddressNumeric";
             this.AddressNumeric.Size = new System.Drawing.Size(82, 20);
             this.AddressNumeric.TabIndex = 6;
             this.AddressNumeric.Value = new decimal(new int[] {
@@ -122,19 +122,18 @@
             0,
             0,
             0});
-
             // 
-            // tcConnect
+            // ConnectTabControl
             // 
             this.ConnectTabControl.Controls.Add(this.DirectPage);
             this.ConnectTabControl.Controls.Add(this.DBPage);
             this.ConnectTabControl.Location = new System.Drawing.Point(12, 12);
-            this.ConnectTabControl.Name = "tcConnect";
+            this.ConnectTabControl.Name = "ConnectTabControl";
             this.ConnectTabControl.SelectedIndex = 0;
             this.ConnectTabControl.Size = new System.Drawing.Size(545, 219);
             this.ConnectTabControl.TabIndex = 7;
             // 
-            // tDirect
+            // DirectPage
             // 
             this.DirectPage.Controls.Add(this.PasswordTextbox);
             this.DirectPage.Controls.Add(this.label4);
@@ -155,14 +154,57 @@
             this.DirectPage.Controls.Add(this.PortLabel);
             this.DirectPage.Controls.Add(this.AddrLabel);
             this.DirectPage.Location = new System.Drawing.Point(4, 22);
-            this.DirectPage.Name = "tDirect";
+            this.DirectPage.Name = "DirectPage";
             this.DirectPage.Padding = new System.Windows.Forms.Padding(3);
             this.DirectPage.Size = new System.Drawing.Size(537, 193);
             this.DirectPage.TabIndex = 0;
             this.DirectPage.Text = "Прямое соединение";
             this.DirectPage.UseVisualStyleBackColor = true;
             // 
-            // nRepeats
+            // PasswordTextbox
+            // 
+            this.PasswordTextbox.Location = new System.Drawing.Point(113, 131);
+            this.PasswordTextbox.MaxLength = 8;
+            this.PasswordTextbox.Name = "PasswordTextbox";
+            this.PasswordTextbox.PasswordChar = '*';
+            this.PasswordTextbox.Size = new System.Drawing.Size(100, 20);
+            this.PasswordTextbox.TabIndex = 20;
+            this.PasswordTextbox.UseSystemPasswordChar = true;
+            this.PasswordTextbox.WordWrap = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 134);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Пароль";
+            // 
+            // AccessCombobox
+            // 
+            this.AccessCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AccessCombobox.FormattingEnabled = true;
+            this.AccessCombobox.Items.AddRange(new object[] {
+            "Пользователь",
+            "Администратор",
+            "Энергонадзор",
+            "Служебный пользователь"});
+            this.AccessCombobox.Location = new System.Drawing.Point(113, 104);
+            this.AccessCombobox.Name = "AccessCombobox";
+            this.AccessCombobox.Size = new System.Drawing.Size(209, 21);
+            this.AccessCombobox.TabIndex = 18;
+            // 
+            // AccessLabel
+            // 
+            this.AccessLabel.AutoSize = true;
+            this.AccessLabel.Location = new System.Drawing.Point(13, 107);
+            this.AccessLabel.Name = "AccessLabel";
+            this.AccessLabel.Size = new System.Drawing.Size(94, 13);
+            this.AccessLabel.TabIndex = 17;
+            this.AccessLabel.Text = "Уровень доступа";
+            // 
+            // RepeatsNumeric
             // 
             this.RepeatsNumeric.Location = new System.Drawing.Point(404, 68);
             this.RepeatsNumeric.Maximum = new decimal(new int[] {
@@ -170,10 +212,9 @@
             0,
             0,
             0});
-            this.RepeatsNumeric.Name = "nRepeats";
+            this.RepeatsNumeric.Name = "RepeatsNumeric";
             this.RepeatsNumeric.Size = new System.Drawing.Size(120, 20);
             this.RepeatsNumeric.TabIndex = 16;
-
             // 
             // label2
             // 
@@ -184,7 +225,7 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Повторы соединения";
             // 
-            // nTimeout
+            // TimeoutNumeric
             // 
             this.TimeoutNumeric.Location = new System.Drawing.Point(404, 42);
             this.TimeoutNumeric.Maximum = new decimal(new int[] {
@@ -192,10 +233,9 @@
             0,
             0,
             0});
-            this.TimeoutNumeric.Name = "nTimeout";
+            this.TimeoutNumeric.Name = "TimeoutNumeric";
             this.TimeoutNumeric.Size = new System.Drawing.Size(120, 20);
             this.TimeoutNumeric.TabIndex = 14;
-
             // 
             // label3
             // 
@@ -206,15 +246,14 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Таймаут, мс";
             // 
-            // cbBaudrate
+            // BaudrateCombobox
             // 
             this.BaudrateCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.BaudrateCombobox.FormattingEnabled = true;
             this.BaudrateCombobox.Location = new System.Drawing.Point(403, 15);
-            this.BaudrateCombobox.Name = "cbBaudrate";
+            this.BaudrateCombobox.Name = "BaudrateCombobox";
             this.BaudrateCombobox.Size = new System.Drawing.Size(121, 21);
             this.BaudrateCombobox.TabIndex = 12;
-           
             // 
             // label1
             // 
@@ -234,11 +273,11 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Протокол";
             // 
-            // rb232
+            // Prot232Radiobutton
             // 
             this.Prot232Radiobutton.AutoSize = true;
             this.Prot232Radiobutton.Location = new System.Drawing.Point(152, 16);
-            this.Prot232Radiobutton.Name = "rb232";
+            this.Prot232Radiobutton.Name = "Prot232Radiobutton";
             this.Prot232Radiobutton.Size = new System.Drawing.Size(61, 17);
             this.Prot232Radiobutton.TabIndex = 9;
             this.Prot232Radiobutton.TabStop = true;
@@ -246,11 +285,11 @@
             this.Prot232Radiobutton.UseVisualStyleBackColor = true;
             this.Prot232Radiobutton.CheckedChanged += new System.EventHandler(this.rb232_CheckedChanged);
             // 
-            // rb485
+            // Prot485Radiobutton
             // 
             this.Prot485Radiobutton.AutoSize = true;
             this.Prot485Radiobutton.Location = new System.Drawing.Point(85, 16);
-            this.Prot485Radiobutton.Name = "rb485";
+            this.Prot485Radiobutton.Name = "Prot485Radiobutton";
             this.Prot485Radiobutton.Size = new System.Drawing.Size(61, 17);
             this.Prot485Radiobutton.TabIndex = 8;
             this.Prot485Radiobutton.TabStop = true;
@@ -258,73 +297,29 @@
             this.Prot485Radiobutton.UseVisualStyleBackColor = true;
             this.Prot485Radiobutton.CheckedChanged += new System.EventHandler(this.rb485_CheckedChanged);
             // 
-            // btnUpdate
+            // UpdateButton
             // 
             this.UpdateButton.BackgroundImage = global::OblikConfigurator.Properties.Resources.refresh_23x23;
             this.UpdateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.UpdateButton.Location = new System.Drawing.Point(173, 48);
             this.UpdateButton.Margin = new System.Windows.Forms.Padding(0);
-            this.UpdateButton.Name = "btnUpdate";
+            this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(23, 23);
             this.UpdateButton.TabIndex = 7;
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // tDB
+            // DBPage
             // 
             this.DBPage.Location = new System.Drawing.Point(4, 22);
-            this.DBPage.Name = "tDB";
+            this.DBPage.Name = "DBPage";
             this.DBPage.Padding = new System.Windows.Forms.Padding(3);
             this.DBPage.Size = new System.Drawing.Size(537, 193);
             this.DBPage.TabIndex = 1;
             this.DBPage.Text = "БД Облик";
             this.DBPage.UseVisualStyleBackColor = true;
             // 
-            // tbPassword
-            // 
-            this.PasswordTextbox.Location = new System.Drawing.Point(113, 131);
-            this.PasswordTextbox.MaxLength = 8;
-            this.PasswordTextbox.Name = "tbPassword";
-            this.PasswordTextbox.PasswordChar = '*';
-            this.PasswordTextbox.Size = new System.Drawing.Size(100, 20);
-            this.PasswordTextbox.TabIndex = 20;
-            this.PasswordTextbox.UseSystemPasswordChar = true;
-            this.PasswordTextbox.WordWrap = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 134);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Пароль";
-            // 
-            // cbAccess
-            // 
-            this.AccessCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AccessCombobox.FormattingEnabled = true;
-            this.AccessCombobox.Items.AddRange(new object[] {
-            "Пользователь",
-            "Администратор",
-            "Энергонадзор",
-            "Служебный пользователь"});
-            this.AccessCombobox.Location = new System.Drawing.Point(113, 104);
-            this.AccessCombobox.Name = "cbAccess";
-            this.AccessCombobox.Size = new System.Drawing.Size(209, 21);
-            this.AccessCombobox.TabIndex = 18;
-          
-            // 
-            // lAccess
-            // 
-            this.AccessLabel.AutoSize = true;
-            this.AccessLabel.Location = new System.Drawing.Point(13, 107);
-            this.AccessLabel.Name = "lAccess";
-            this.AccessLabel.Size = new System.Drawing.Size(94, 13);
-            this.AccessLabel.TabIndex = 17;
-            this.AccessLabel.Text = "Уровень доступа";
-            // 
-            // frmConnect
+            // ConnectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -334,7 +329,7 @@
             this.Controls.Add(this.ConnectButton);
             this.Controls.Add(this.CancelButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmConnect";
+            this.Name = "ConnectForm";
             this.Text = "Соединение";
             ((System.ComponentModel.ISupportInitialize)(this.AddressNumeric)).EndInit();
             this.ConnectTabControl.ResumeLayout(false);

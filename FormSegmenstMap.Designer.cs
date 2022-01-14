@@ -1,6 +1,6 @@
 ﻿namespace OblikConfigurator
 {
-    partial class SegmenstMapForm
+    partial class FormSegmenstMap
     {
         /// <summary>
         /// Required designer variable.

@@ -12,12 +12,12 @@ using Oblik.Driver;
 
 namespace OblikConfigurator
 {
-    public partial class ConnectForm : Form
+    public partial class FormConnect : Form
     {
         private readonly SerialConnectionParams serialConnectionParams;
-        private readonly MainForm MainForm;
+        private readonly FormMain MainForm;
 
-        public ConnectForm(MainForm MainForm)
+        public FormConnect(FormMain MainForm)
         {
             this.MainForm = MainForm;
             this.MainForm.Visible = false;
@@ -46,6 +46,8 @@ namespace OblikConfigurator
         {
             ConnectButton.Enabled = true;
             PortCombobox.Enabled = true;
+            PortCombobox.Items.Clear(); //Очистка старого списка
+
             string[] ports = SerialPort.GetPortNames();
             foreach (string port in ports)
             {
@@ -88,7 +90,7 @@ namespace OblikConfigurator
                     Settings.oblikDriver = new OblikSerialDriver(serialConnectionParams);
                     Settings.Oblik = new Meter(Settings.oblikDriver, Settings.connectionParams);
                     Settings.isConnected = true;
-                    
+                    Close();
                     MainForm.Connect();
                     break;
                 default: break;
@@ -104,14 +106,12 @@ namespace OblikConfigurator
         {
             serialConnectionParams.IsDirectConnected = false;
             AddressNumeric.Enabled = true;
-            PortCombobox.Enabled = true;
         }
 
         private void rb232_CheckedChanged(object sender, EventArgs e)
         {
             serialConnectionParams.IsDirectConnected = true;
             AddressNumeric.Enabled = false;
-            PortCombobox.Enabled = false;
         }
     }
 }

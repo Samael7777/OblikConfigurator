@@ -10,9 +10,9 @@ using Oblik;
 
 namespace OblikConfigurator
 {
-    public partial class SegmenstMapForm : Form
+    public partial class FormSegmenstMap : Form
     {
-        public SegmenstMapForm(SegmentsMapRecord[] Map)
+        public FormSegmenstMap(SegmentsMapRecord[] Map)
         {
             InitializeComponent();
 
