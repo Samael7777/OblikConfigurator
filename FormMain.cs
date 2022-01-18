@@ -82,6 +82,8 @@ namespace OblikConfigurator
             {
                 btn.Enabled = status;
             }
+            инструментыToolStripMenuItem.Enabled = status;
+            настройкиToolStripMenuItem.Enabled = status;
         }
         
         /// <summary>
@@ -322,13 +324,6 @@ namespace OblikConfigurator
                 });
         }
 
-        /// <summary>
-        /// Сообщение об отсутствии подключения
-        /// </summary>
-        internal void ConnectionAlert()
-        {
-            MessageBox.Show("Нет подключения!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
 
         /// <summary>
         /// Установка подключения к счетчику
@@ -389,12 +384,6 @@ namespace OblikConfigurator
 
         private void картаСегментовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!Settings.isConnected)
-            {
-                ConnectionAlert();
-                return;
-            }
-
             void SetSegmentsMap(SegmentsMapRecord[] map)
             {
                 FormSegmenstMap formSegmentsMap = new FormSegmenstMap(map);
@@ -466,12 +455,7 @@ namespace OblikConfigurator
 
         private void настройкаПараметровToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!Settings.isConnected)
-            {
-                ConnectionAlert();
-                return;
-            }
-            InfoUpdater.UpdateAsync(
+           InfoUpdater.UpdateAsync(
                 () => Settings.Oblik.CalculationParams, 
                 (coeffs) =>
                 {

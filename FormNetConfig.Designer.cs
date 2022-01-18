@@ -33,7 +33,7 @@
             this.AddressNumeric = new System.Windows.Forms.NumericUpDown();
             this.AddrLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AddressNumeric)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,13 +94,13 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(93, 88);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 18;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CloseButton.Location = new System.Drawing.Point(93, 88);
+            this.CloseButton.Name = "CancelButton";
+            this.CloseButton.Size = new System.Drawing.Size(75, 23);
+            this.CloseButton.TabIndex = 18;
+            this.CloseButton.Text = "Отмена";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // NetConfigForm
             // 
@@ -108,7 +108,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(286, 121);
             this.ControlBox = false;
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.BaudrateCombobox);
             this.Controls.Add(this.label1);
@@ -130,6 +130,6 @@
         private System.Windows.Forms.NumericUpDown AddressNumeric;
         private System.Windows.Forms.Label AddrLabel;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button CloseButton;
     }
 }

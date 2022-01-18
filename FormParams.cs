@@ -56,7 +56,7 @@ namespace OblikConfigurator
         private void UpdateUnits()
         {
             currentCoeffs.Volt_fct = currentCoeffs.Volt_1w / currentCoeffs.Volt_2w;
-            currentCoeffs.Volt_unit = Math.Truncate(Math.Log10(currentCoeffs.Volt_fct));
+            currentCoeffs.Volt_unit = (sbyte)Math.Truncate(Math.Log10(currentCoeffs.Volt_fct));
 
             textBoxCoeffEn.Text = currentCoeffs.Ener_fct.ToString();
             textBoxCoeffPow.Text = currentCoeffs.Powr_fct.ToString();
