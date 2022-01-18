@@ -291,6 +291,12 @@ namespace OblikConfigurator
             UpdateNetwokConfig();
         }
 
+        internal void SaveCalculationParams(CalcUnits calcUnits)
+        {
+            InfoUpdater.Execute(() => Settings.Oblik.CalculationParams = calcUnits);
+            UpdateCoeffs();
+        }
+
         /// <summary>
         /// Добавить запись в лог
         /// </summary>
@@ -404,8 +410,13 @@ namespace OblikConfigurator
         {
             if (MessageBox.Show("Стереть суточный график?","Подтверждение" ,MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                InfoUpdater.ExecuteAsync(Settings.Oblik.CleanDayGraph);
-                InfoUpdater.UpdateAsync(() => Settings.Oblik.DayGraphPointer, (pointer) => LabelDayGraphRecs.Text = pointer.ToString());
+                InfoUpdater.UpdateAsync(
+                    () =>
+                    {
+                        Settings.Oblik.CleanDayGraph();
+                        return Settings.Oblik.DayGraphPointer; 
+                    }, 
+                    (pointer) => LabelDayGraphRecs.Text = pointer.ToString());
             }
         }
 
@@ -413,8 +424,13 @@ namespace OblikConfigurator
         {
             if (MessageBox.Show("Стереть пртокол событий?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                InfoUpdater.ExecuteAsync(Settings.Oblik.CleanEventLog);
-                InfoUpdater.UpdateAsync(() => Settings.Oblik.EventLogPointer, (pointer) => LabelEventLogRecs.Text = pointer.ToString());
+                InfoUpdater.UpdateAsync(
+                    () =>
+                    {
+                        Settings.Oblik.CleanEventLog();
+                        return Settings.Oblik.EventLogPointer;
+                    }, 
+                    (pointer) => LabelEventLogRecs.Text = pointer.ToString());
             }
         }
 
@@ -446,6 +462,22 @@ namespace OblikConfigurator
                     FormLogRequest formLogRequest = new FormLogRequest(this, recs);
                     formLogRequest.Show();
                 });
+        }
+
+        private void настройкаПараметровToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Settings.isConnected)
+            {
+                ConnectionAlert();
+                return;
+            }
+            InfoUpdater.UpdateAsync(
+                () => Settings.Oblik.CalculationParams, 
+                (coeffs) =>
+                {
+                    FormParams formParams = new FormParams(this, coeffs);
+                    formParams.Show();
+                });        
         }
 
         private void MainForm_Activated(object sender, EventArgs e)

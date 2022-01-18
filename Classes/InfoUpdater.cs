@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Oblik;
+using System;
 using System.Threading.Tasks;
-using Oblik;
 
 namespace OblikConfigurator
 {
     internal class InfoUpdater
     {
         private readonly FormMain mainForm;
+
         internal InfoUpdater(FormMain form)
         {
             mainForm = form;
@@ -41,7 +39,7 @@ namespace OblikConfigurator
         /// Асинхронное выполнение процедуры счетчика
         /// </summary>
         /// <param name="MeterAction">Метод void счетчика</param>
-        internal async void ExecuteAsync (Action MeterAction)
+        internal async void ExecuteAsync(Action MeterAction)
         {
             await Task.Factory.StartNew(() => SafeActionTask(mainForm, () => VoidAction(MeterAction)));
         }
@@ -111,7 +109,7 @@ namespace OblikConfigurator
         }
 
         /// <summary>
-        /// Заглушка для Func<T> 
+        /// Заглушка для Func<T>
         /// </summary>
         /// <param name="action"></param>
         /// <returns></returns>
@@ -122,6 +120,3 @@ namespace OblikConfigurator
         }
     }
 }
-
-
-

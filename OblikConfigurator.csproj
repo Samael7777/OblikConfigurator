@@ -102,6 +102,12 @@
     <Compile Include="FormNetConfig.Designer.cs">
       <DependentUpon>FormNetConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormParams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormParams.Designer.cs">
+      <DependentUpon>FormParams.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSegmenstMap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNetConfig.resx">
       <DependentUpon>FormNetConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormParams.resx">
+      <DependentUpon>FormParams.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSegmenstMap.resx">
       <DependentUpon>FormSegmenstMap.cs</DependentUpon>

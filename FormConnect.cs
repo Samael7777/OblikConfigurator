@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.IO.Ports;
-using Oblik;
+﻿using Oblik;
 using Oblik.Driver;
+using System;
+using System.IO.Ports;
+using System.Windows.Forms;
 
 namespace OblikConfigurator
 {
@@ -39,8 +33,8 @@ namespace OblikConfigurator
             //Настройки соединения
             AccessCombobox.SelectedIndex = (int)Settings.connectionParams.User;
             PasswordTextbox.Text = Settings.connectionParams.Password;
-            
         }
+
         //Сканирование доступных портов
         private void ScanPorts()
         {
@@ -93,6 +87,7 @@ namespace OblikConfigurator
                     Close();
                     MainForm.Connect();
                     break;
+
                 default: break;
             }
         }

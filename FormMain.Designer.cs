@@ -1154,6 +1154,7 @@
             this.настройкаПараметровToolStripMenuItem.Name = "настройкаПараметровToolStripMenuItem";
             this.настройкаПараметровToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.настройкаПараметровToolStripMenuItem.Text = "Настройка параметров";
+            this.настройкаПараметровToolStripMenuItem.Click += new System.EventHandler(this.настройкаПараметровToolStripMenuItem_Click);
             // 
             // настройкаЗонToolStripMenuItem
             // 
@@ -1283,7 +1284,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimumSize = new System.Drawing.Size(804, 615);
             this.Name = "FormMain";
-            this.Text = "Параметры счетчика ОБЛИК";
+            this.Text = "Параметризатор счетчика ОБЛИК";
             this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
             this.Shown += new System.EventHandler(this.MainForm_Shown);

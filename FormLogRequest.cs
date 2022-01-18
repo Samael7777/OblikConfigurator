@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace OblikConfigurator
@@ -12,6 +6,7 @@ namespace OblikConfigurator
     public partial class FormLogRequest : Form
     {
         private readonly FormMain formMain;
+
         public FormLogRequest(FormMain form, int currentRecs)
         {
             InitializeComponent();

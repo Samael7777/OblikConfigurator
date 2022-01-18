@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using Oblik;
+using System;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Oblik;
 
 namespace OblikConfigurator
 {
@@ -35,6 +30,5 @@ namespace OblikConfigurator
                     );
             }
         }
-
     }
 }
