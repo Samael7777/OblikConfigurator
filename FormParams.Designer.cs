@@ -431,7 +431,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(285, 187);
+            this.label13.Location = new System.Drawing.Point(285, 159);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(160, 13);
             this.label13.TabIndex = 8;
@@ -439,7 +439,7 @@
             // 
             // numericInterval
             // 
-            this.numericInterval.Location = new System.Drawing.Point(451, 185);
+            this.numericInterval.Location = new System.Drawing.Point(451, 157);
             this.numericInterval.Maximum = new decimal(new int[] {
             255,
             0,

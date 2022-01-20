@@ -14,11 +14,11 @@ namespace OblikConfigurator
             {
                 DatagridDayGraph.Rows.Add
                     (
-                        (DateTime)item.TimeStamp,
-                        $"{(float)item.Act_en_p:f4}",
-                        $"{(float)item.Act_en_n:f4}",
-                        $"{(float)item.Rea_en_p:f4}",
-                        $"{(float)item.Rea_en_n:f4}",
+                        ((DateTime)item.TimeStamp).ToLocalTime(),
+                        $"{(float)item.Act_en_p}",
+                        $"{(float)item.Act_en_n}",
+                        $"{(float)item.Rea_en_p}",
+                        $"{(float)item.Rea_en_n}",
                         item.Channel_1,
                         item.Channel_2,
                         item.Channel_3,

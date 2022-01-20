@@ -22,6 +22,7 @@ namespace OblikConfigurator
         
         CalcUnits currentCoeffs;
         float Ki, Ku, Ken, Kpow;
+        float dispKi, dispKu, dispKen, dispKpow;    //Коэффициенты для отображаемой информации
 
         readonly Label[] channels;
         readonly Control[] controls;
@@ -30,6 +31,11 @@ namespace OblikConfigurator
         public FormMain()
         {
             InitializeComponent();
+            
+            dispKu = 1;
+            dispKi = 1;
+            dispKen = 1;
+            dispKpow = 1;
 
             InfoUpdater = new InfoUpdater(this);
             currentCoeffs = new CalcUnits();
@@ -172,24 +178,7 @@ namespace OblikConfigurator
 
             void SetGeneralInfo(GeneralInfo generalInfo)
             {
-                //Коэффициенты
-                float energyCoeff, powerCoeff, currentCoeff, voltageCoeff;
-                if (CheckboxCoeffs.Checked)
-                {
-                    voltageCoeff = Ku;
-                    currentCoeff = Ki;
-                    energyCoeff = Ken;
-                    powerCoeff = Kpow;
-                }
-                else
-                {
-                    energyCoeff = 1;
-                    powerCoeff = 1;
-                    currentCoeff = 1;
-                    voltageCoeff = 1;
-                }
-
-                //Текущие значения
+               //Текущие значения
                 float P = generalInfo.CurrentValues.Act_pw;
                 float Q = generalInfo.CurrentValues.Rea_pw;
                 float angle = (float)Math.Atan(Q / P);
@@ -204,15 +193,15 @@ namespace OblikConfigurator
                     LabelCos.Text = string.Format("{0:f3}", cos) + "(L)";
                 }
 
-                LabelUa.Text = $"{generalInfo.CurrentValues.Volt1 * voltageCoeff:f2}";
-                LabelUb.Text = $"{generalInfo.CurrentValues.Volt2 * voltageCoeff:f2}";
-                LabelUc.Text = $"{generalInfo.CurrentValues.Volt3 * voltageCoeff:f2}";
-                LabelIa.Text = $"{generalInfo.CurrentValues.Curr1 * currentCoeff:f2}";
-                LabelIb.Text = $"{generalInfo.CurrentValues.Curr2 * currentCoeff:f2}";
-                LabelIc.Text = $"{generalInfo.CurrentValues.Curr3 * currentCoeff:f2}";
+                LabelUa.Text = $"{generalInfo.CurrentValues.Volt1 * dispKu:f2}";
+                LabelUb.Text = $"{generalInfo.CurrentValues.Volt2 * dispKu:f2}";
+                LabelUc.Text = $"{generalInfo.CurrentValues.Volt3 * dispKu:f2}";
+                LabelIa.Text = $"{generalInfo.CurrentValues.Curr1 * dispKi:f2}";
+                LabelIb.Text = $"{generalInfo.CurrentValues.Curr2 * dispKi:f2}";
+                LabelIc.Text = $"{generalInfo.CurrentValues.Curr3 * dispKi:f2}";
                 LabelFreq.Text = $"{generalInfo.CurrentValues.Freq / 30f:f3}";
-                LabelActPower.Text = $"{P * powerCoeff:f4}";
-                LabelReaPower.Text = $"{Q * powerCoeff:f4}";
+                LabelActPower.Text = $"{P * dispKpow:f4}";
+                LabelReaPower.Text = $"{Q * dispKpow:f4}";
 
                 LabelChannel1.Text = generalInfo.MinuteValues.Channel_1.ToString();
                 LabelChannel2.Text = generalInfo.MinuteValues.Channel_2.ToString();
@@ -462,6 +451,15 @@ namespace OblikConfigurator
                     FormParams formParams = new FormParams(this, coeffs);
                     formParams.Show();
                 });        
+        }
+
+        private void CheckboxCoeffs_CheckedChanged(object sender, EventArgs e)
+        {
+            dispKu = (CheckboxCoeffs.Checked) ? Ku : 1;
+            dispKi = (CheckboxCoeffs.Checked) ? Ki : 1;
+            dispKpow = (CheckboxCoeffs.Checked) ? Kpow : 1;
+            dispKen = (CheckboxCoeffs.Checked) ? Ken : 1;
+            UpdateGeneralInfo();
         }
 
         private void MainForm_Activated(object sender, EventArgs e)

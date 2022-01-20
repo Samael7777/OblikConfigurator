@@ -127,7 +127,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColAct_p.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColAct_p.FillWeight = 105F;
-            this.ColAct_p.HeaderText = "Активная (+) КВт*ч";
+            this.ColAct_p.HeaderText = "Активная (+)";
             this.ColAct_p.Name = "ColAct_p";
             this.ColAct_p.ReadOnly = true;
             this.ColAct_p.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -139,7 +139,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ColAct_n.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColAct_n.FillWeight = 105F;
-            this.ColAct_n.HeaderText = "Активная (-) КВт*ч";
+            this.ColAct_n.HeaderText = "Активная (-)";
             this.ColAct_n.Name = "ColAct_n";
             this.ColAct_n.ReadOnly = true;
             this.ColAct_n.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -150,7 +150,7 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColRea_p.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColRea_p.FillWeight = 105F;
-            this.ColRea_p.HeaderText = "Реактивная (+) Квар*ч";
+            this.ColRea_p.HeaderText = "Реактивная (+)";
             this.ColRea_p.Name = "ColRea_p";
             this.ColRea_p.ReadOnly = true;
             this.ColRea_p.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -161,7 +161,7 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColRea_n.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColRea_n.FillWeight = 105F;
-            this.ColRea_n.HeaderText = "Реактивная (-) Квар*ч";
+            this.ColRea_n.HeaderText = "Реактивная (-)";
             this.ColRea_n.Name = "ColRea_n";
             this.ColRea_n.ReadOnly = true;
             this.ColRea_n.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
