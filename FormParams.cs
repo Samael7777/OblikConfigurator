@@ -64,28 +64,35 @@ namespace OblikConfigurator
         private void UpdateUnits()
         {
             float Ku = currentCoeffs.Volt_1w / currentCoeffs.Volt_2w;
-            currentCoeffs.Volt_unit = (sbyte)(Math.Truncate(Math.Log10(Ku)) + 1);
-            currentCoeffs.Volt_fct = (float)(Ku / Math.Pow(10, currentCoeffs.Volt_unit));
-            textBoxCoeffU.Text = currentCoeffs.Volt_fct.ToString();
-            textBoxUnitU.Text = CoeffsString(currentCoeffs.Volt_unit, "В");
-
             float Ki = currentCoeffs.Curr_1w / currentCoeffs.Curr_2w;
-            currentCoeffs.Curr_unit = (sbyte)Math.Truncate(Math.Log10(Ki));
-            currentCoeffs.Curr_fct = (float)(Ki / Math.Pow(10, currentCoeffs.Curr_unit));
-            textBoxCoeffI.Text = currentCoeffs.Curr_fct.ToString();
-            textBoxUnitI.Text = CoeffsString(currentCoeffs.Curr_unit, "А");
-
             float Kp = Ku * Ki;
-            currentCoeffs.Powr_unit = (sbyte)(Math.Truncate(Math.Log10(Kp)) + 1);
-            currentCoeffs.Powr_fct = (float)(Kp / Math.Pow(10, currentCoeffs.Powr_unit));
+
+            currentCoeffs.Volt_fct = Ku;
+            currentCoeffs.Curr_fct = Ki;
+            currentCoeffs.Powr_fct = Kp;
+
+            sbyte pwr_unit = (sbyte)Math.Log10(Kp * 4);
+            currentCoeffs.Powr_unit = pwr_unit;
+            currentCoeffs.Powr_fct /= (float)Math.Pow(10, pwr_unit);
             textBoxCoeffPow.Text = currentCoeffs.Powr_fct.ToString();
             textBoxUnitPow.Text = CoeffsString(currentCoeffs.Powr_unit, "Вт");
 
-            float Kw = Kp / 2;              //Получасовая мощность????? Непонятно....
-            currentCoeffs.Ener_unit = (sbyte)(Math.Truncate(Math.Log10(Kw)) + 3);
-            currentCoeffs.Ener_fct = (float)(Kw / Math.Pow(10, currentCoeffs.Ener_unit));
+            currentCoeffs.Ener_unit = (sbyte)(pwr_unit + 3);
+            currentCoeffs.Ener_fct = Kp / 1800;
             textBoxCoeffEn.Text = $"{currentCoeffs.Ener_fct:f6}";
             textBoxUnitEn.Text = CoeffsString(currentCoeffs.Ener_unit, "Вт·ч");
+
+            sbyte volt_unit = (sbyte)(Math.Log10(currentCoeffs.Volt_fct * 5) - 1);
+            currentCoeffs.Volt_unit = (volt_unit < 0) ? (sbyte)0 : volt_unit;
+            currentCoeffs.Volt_fct /= (float)Math.Pow(10, currentCoeffs.Volt_unit);
+            textBoxCoeffU.Text = currentCoeffs.Volt_fct.ToString();
+            textBoxUnitU.Text = CoeffsString(currentCoeffs.Volt_unit, "В");
+
+            sbyte curr_unit = (sbyte)(Math.Log10(currentCoeffs.Curr_fct * 100.0) - 1);
+            currentCoeffs.Curr_unit = curr_unit;
+            currentCoeffs.Curr_fct /= (float)Math.Pow(10, curr_unit);
+            textBoxCoeffI.Text = currentCoeffs.Curr_fct.ToString();
+            textBoxUnitI.Text = CoeffsString(currentCoeffs.Curr_unit, "А");            
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

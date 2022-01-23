@@ -42,7 +42,7 @@ namespace OblikConfigurator
 
             //Настройка Hi DPI Scalling для Vista и выше
             if (Environment.OSVersion.Version.Major >= 6)
-            {
+            { 
                 //SetProcessDpiAwareness((int)DpiAwareness.PerMonitorAware);
             }
             Application.Run(new FormMain());

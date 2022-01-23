@@ -282,9 +282,9 @@ namespace OblikConfigurator
             UpdateNetwokConfig();
         }
 
-        internal void SaveCalculationParams(CalcUnits calcUnits)
+        internal void SaveCalculationParams(CalcUnits currentCoeffs)
         {
-            InfoUpdater.Execute(() => Settings.Oblik.CalculationParams = calcUnits);
+            InfoUpdater.Execute(() => Settings.Oblik.CalculationParams = currentCoeffs);
             UpdateCoeffs();
         }
 
