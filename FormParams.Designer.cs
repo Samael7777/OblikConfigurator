@@ -298,7 +298,7 @@
             this.groupBox3.Size = new System.Drawing.Size(298, 136);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Масштабные коэффициенты и еденицы измерения";
+            this.groupBox3.Text = "Масштабные коэффициенты и единицы измерения";
             // 
             // textBoxUnitU
             // 

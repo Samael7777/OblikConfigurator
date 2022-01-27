@@ -181,7 +181,8 @@ namespace OblikConfigurator
                //Текущие значения
                 float P = generalInfo.CurrentValues.Act_pw;
                 float Q = generalInfo.CurrentValues.Rea_pw;
-                float angle = (float)Math.Atan(Q / P);
+                
+                float angle = (P == 0)? 0 : (float)Math.Atan(Q / P);
                 float sig = Math.Sign(angle);
                 float cos = (float)Math.Cos(angle);
                 if (sig == -1)

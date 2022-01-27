@@ -61,20 +61,18 @@
             // PortLabel
             // 
             this.PortLabel.AutoSize = true;
-            this.PortLabel.Location = new System.Drawing.Point(24, 96);
-            this.PortLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.PortLabel.Location = new System.Drawing.Point(13, 52);
             this.PortLabel.Name = "PortLabel";
-            this.PortLabel.Size = new System.Drawing.Size(60, 25);
+            this.PortLabel.Size = new System.Drawing.Size(32, 13);
             this.PortLabel.TabIndex = 0;
             this.PortLabel.Text = "Порт";
             // 
             // AddrLabel
             // 
             this.AddrLabel.AutoSize = true;
-            this.AddrLabel.Location = new System.Drawing.Point(24, 142);
-            this.AddrLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.AddrLabel.Location = new System.Drawing.Point(13, 77);
             this.AddrLabel.Name = "AddrLabel";
-            this.AddrLabel.Size = new System.Drawing.Size(124, 25);
+            this.AddrLabel.Size = new System.Drawing.Size(66, 13);
             this.AddrLabel.TabIndex = 1;
             this.AddrLabel.Text = "Адрес(HEX)";
             // 
@@ -82,18 +80,16 @@
             // 
             this.PortCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PortCombobox.FormattingEnabled = true;
-            this.PortCombobox.Location = new System.Drawing.Point(156, 90);
-            this.PortCombobox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PortCombobox.Location = new System.Drawing.Point(85, 49);
             this.PortCombobox.Name = "PortCombobox";
-            this.PortCombobox.Size = new System.Drawing.Size(147, 32);
+            this.PortCombobox.Size = new System.Drawing.Size(82, 21);
             this.PortCombobox.TabIndex = 2;
             // 
             // ConnectButton
             // 
-            this.ConnectButton.Location = new System.Drawing.Point(22, 438);
-            this.ConnectButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ConnectButton.Location = new System.Drawing.Point(12, 237);
             this.ConnectButton.Name = "ConnectButton";
-            this.ConnectButton.Size = new System.Drawing.Size(277, 42);
+            this.ConnectButton.Size = new System.Drawing.Size(151, 23);
             this.ConnectButton.TabIndex = 3;
             this.ConnectButton.Text = "Соединение";
             this.ConnectButton.UseVisualStyleBackColor = true;
@@ -101,10 +97,9 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(737, 438);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CancelButton.Location = new System.Drawing.Point(402, 237);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(277, 42);
+            this.CancelButton.Size = new System.Drawing.Size(151, 23);
             this.CancelButton.TabIndex = 5;
             this.CancelButton.Text = "Отмена";
             this.CancelButton.UseVisualStyleBackColor = true;
@@ -113,15 +108,14 @@
             // AddressNumeric
             // 
             this.AddressNumeric.Hexadecimal = true;
-            this.AddressNumeric.Location = new System.Drawing.Point(156, 138);
-            this.AddressNumeric.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.AddressNumeric.Location = new System.Drawing.Point(85, 75);
             this.AddressNumeric.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.AddressNumeric.Name = "AddressNumeric";
-            this.AddressNumeric.Size = new System.Drawing.Size(150, 29);
+            this.AddressNumeric.Size = new System.Drawing.Size(82, 20);
             this.AddressNumeric.TabIndex = 6;
             this.AddressNumeric.Value = new decimal(new int[] {
             1,
@@ -133,11 +127,10 @@
             // 
             this.ConnectTabControl.Controls.Add(this.DirectPage);
             this.ConnectTabControl.Controls.Add(this.DBPage);
-            this.ConnectTabControl.Location = new System.Drawing.Point(22, 22);
-            this.ConnectTabControl.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ConnectTabControl.Location = new System.Drawing.Point(12, 12);
             this.ConnectTabControl.Name = "ConnectTabControl";
             this.ConnectTabControl.SelectedIndex = 0;
-            this.ConnectTabControl.Size = new System.Drawing.Size(999, 404);
+            this.ConnectTabControl.Size = new System.Drawing.Size(545, 219);
             this.ConnectTabControl.TabIndex = 7;
             // 
             // DirectPage
@@ -160,23 +153,21 @@
             this.DirectPage.Controls.Add(this.AddressNumeric);
             this.DirectPage.Controls.Add(this.PortLabel);
             this.DirectPage.Controls.Add(this.AddrLabel);
-            this.DirectPage.Location = new System.Drawing.Point(4, 33);
-            this.DirectPage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DirectPage.Location = new System.Drawing.Point(4, 22);
             this.DirectPage.Name = "DirectPage";
-            this.DirectPage.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.DirectPage.Size = new System.Drawing.Size(991, 367);
+            this.DirectPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.DirectPage.Size = new System.Drawing.Size(537, 193);
             this.DirectPage.TabIndex = 0;
             this.DirectPage.Text = "Прямое соединение";
             this.DirectPage.UseVisualStyleBackColor = true;
             // 
             // PasswordTextbox
             // 
-            this.PasswordTextbox.Location = new System.Drawing.Point(207, 242);
-            this.PasswordTextbox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PasswordTextbox.Location = new System.Drawing.Point(113, 131);
             this.PasswordTextbox.MaxLength = 8;
             this.PasswordTextbox.Name = "PasswordTextbox";
             this.PasswordTextbox.PasswordChar = '*';
-            this.PasswordTextbox.Size = new System.Drawing.Size(180, 29);
+            this.PasswordTextbox.Size = new System.Drawing.Size(100, 20);
             this.PasswordTextbox.TabIndex = 20;
             this.PasswordTextbox.UseSystemPasswordChar = true;
             this.PasswordTextbox.WordWrap = false;
@@ -184,10 +175,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 247);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Location = new System.Drawing.Point(13, 134);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 25);
+            this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 19;
             this.label4.Text = "Пароль";
             // 
@@ -200,65 +190,59 @@
             "Администратор",
             "Энергонадзор",
             "Служебный пользователь"});
-            this.AccessCombobox.Location = new System.Drawing.Point(207, 192);
-            this.AccessCombobox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.AccessCombobox.Location = new System.Drawing.Point(113, 104);
             this.AccessCombobox.Name = "AccessCombobox";
-            this.AccessCombobox.Size = new System.Drawing.Size(380, 32);
+            this.AccessCombobox.Size = new System.Drawing.Size(209, 21);
             this.AccessCombobox.TabIndex = 18;
             // 
             // AccessLabel
             // 
             this.AccessLabel.AutoSize = true;
-            this.AccessLabel.Location = new System.Drawing.Point(24, 198);
-            this.AccessLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.AccessLabel.Location = new System.Drawing.Point(13, 107);
             this.AccessLabel.Name = "AccessLabel";
-            this.AccessLabel.Size = new System.Drawing.Size(168, 25);
+            this.AccessLabel.Size = new System.Drawing.Size(94, 13);
             this.AccessLabel.TabIndex = 17;
             this.AccessLabel.Text = "Уровень доступа";
             // 
             // RepeatsNumeric
             // 
-            this.RepeatsNumeric.Location = new System.Drawing.Point(741, 126);
-            this.RepeatsNumeric.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.RepeatsNumeric.Location = new System.Drawing.Point(404, 68);
             this.RepeatsNumeric.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.RepeatsNumeric.Name = "RepeatsNumeric";
-            this.RepeatsNumeric.Size = new System.Drawing.Size(220, 29);
+            this.RepeatsNumeric.Size = new System.Drawing.Size(120, 20);
             this.RepeatsNumeric.TabIndex = 16;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(436, 129);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(238, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 25);
+            this.label2.Size = new System.Drawing.Size(115, 13);
             this.label2.TabIndex = 15;
             this.label2.Text = "Повторы соединения";
             // 
             // TimeoutNumeric
             // 
-            this.TimeoutNumeric.Location = new System.Drawing.Point(741, 78);
-            this.TimeoutNumeric.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TimeoutNumeric.Location = new System.Drawing.Point(404, 42);
             this.TimeoutNumeric.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.TimeoutNumeric.Name = "TimeoutNumeric";
-            this.TimeoutNumeric.Size = new System.Drawing.Size(220, 29);
+            this.TimeoutNumeric.Size = new System.Drawing.Size(120, 20);
             this.TimeoutNumeric.TabIndex = 14;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(436, 81);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(238, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 25);
+            this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 13;
             this.label3.Text = "Таймаут, мс";
             // 
@@ -266,39 +250,35 @@
             // 
             this.BaudrateCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.BaudrateCombobox.FormattingEnabled = true;
-            this.BaudrateCombobox.Location = new System.Drawing.Point(739, 28);
-            this.BaudrateCombobox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BaudrateCombobox.Location = new System.Drawing.Point(403, 15);
             this.BaudrateCombobox.Name = "BaudrateCombobox";
-            this.BaudrateCombobox.Size = new System.Drawing.Size(218, 32);
+            this.BaudrateCombobox.Size = new System.Drawing.Size(121, 21);
             this.BaudrateCombobox.TabIndex = 12;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(436, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(238, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 25);
+            this.label1.Size = new System.Drawing.Size(142, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Скорость соединения, бод";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 33);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Location = new System.Drawing.Point(13, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 25);
+            this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Протокол";
             // 
             // Prot232Radiobutton
             // 
             this.Prot232Radiobutton.AutoSize = true;
-            this.Prot232Radiobutton.Location = new System.Drawing.Point(279, 30);
-            this.Prot232Radiobutton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Prot232Radiobutton.Location = new System.Drawing.Point(152, 16);
             this.Prot232Radiobutton.Name = "Prot232Radiobutton";
-            this.Prot232Radiobutton.Size = new System.Drawing.Size(104, 29);
+            this.Prot232Radiobutton.Size = new System.Drawing.Size(61, 17);
             this.Prot232Radiobutton.TabIndex = 9;
             this.Prot232Radiobutton.TabStop = true;
             this.Prot232Radiobutton.Text = "RS-232";
@@ -308,10 +288,9 @@
             // Prot485Radiobutton
             // 
             this.Prot485Radiobutton.AutoSize = true;
-            this.Prot485Radiobutton.Location = new System.Drawing.Point(156, 30);
-            this.Prot485Radiobutton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Prot485Radiobutton.Location = new System.Drawing.Point(85, 16);
             this.Prot485Radiobutton.Name = "Prot485Radiobutton";
-            this.Prot485Radiobutton.Size = new System.Drawing.Size(104, 29);
+            this.Prot485Radiobutton.Size = new System.Drawing.Size(61, 17);
             this.Prot485Radiobutton.TabIndex = 8;
             this.Prot485Radiobutton.TabStop = true;
             this.Prot485Radiobutton.Text = "RS-485";
@@ -322,35 +301,33 @@
             // 
             this.UpdateButton.BackgroundImage = global::OblikConfigurator.Properties.Resources.refresh_23x23;
             this.UpdateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UpdateButton.Location = new System.Drawing.Point(317, 89);
+            this.UpdateButton.Location = new System.Drawing.Point(173, 48);
             this.UpdateButton.Margin = new System.Windows.Forms.Padding(0);
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(42, 42);
+            this.UpdateButton.Size = new System.Drawing.Size(23, 23);
             this.UpdateButton.TabIndex = 7;
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // DBPage
             // 
-            this.DBPage.Location = new System.Drawing.Point(4, 33);
-            this.DBPage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DBPage.Location = new System.Drawing.Point(4, 22);
             this.DBPage.Name = "DBPage";
-            this.DBPage.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.DBPage.Size = new System.Drawing.Size(991, 367);
+            this.DBPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.DBPage.Size = new System.Drawing.Size(537, 193);
             this.DBPage.TabIndex = 1;
             this.DBPage.Text = "БД Облик";
             this.DBPage.UseVisualStyleBackColor = true;
             // 
             // FormConnect
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 498);
+            this.ClientSize = new System.Drawing.Size(565, 270);
             this.Controls.Add(this.ConnectTabControl);
             this.Controls.Add(this.ConnectButton);
             this.Controls.Add(this.CancelButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "FormConnect";
             this.Text = "Соединение";

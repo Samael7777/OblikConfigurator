@@ -16,7 +16,7 @@ namespace OblikConfigurator
             this.MainForm = MainForm;
             this.MainForm.Visible = false;
             InitializeComponent();
-
+            
             //Соединение через COM-порт
             serialConnectionParams = new SerialConnectionParams();
             foreach (int br in Settings.baudrates)
@@ -24,7 +24,7 @@ namespace OblikConfigurator
                 BaudrateCombobox.Items.Add(br.ToString());
             }
             ScanPorts();
-            Prot485Radiobutton.Select();
+            Prot485Radiobutton.Checked = true;
             BaudrateCombobox.Text = Settings.connectionParams.Baudrate.ToString();
             TimeoutNumeric.Value = Settings.connectionParams.Timeout;
             RepeatsNumeric.Value = Settings.Repeats;

@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Oblik;
 
@@ -17,16 +11,6 @@ namespace OblikConfigurator
         private readonly int[] I2w = { 1, 5 };
 
         CalcUnits currentCoeffs;
-
-
-        private string CoeffsString(sbyte unit, string unitname)
-        {
-            string[] prefixes = { "", "к", "М", "Г", "Т" };
-            int index = unit / 3;
-            string prefix = prefixes[index];
-            float coef = (float)Math.Pow(10, unit - 3 * index);
-            return $"{prefix}{unitname}" + ((coef == 1) ? "" : $" · {coef}");
-        } 
 
 
         public FormParams(FormMain mainForm, CalcUnits currentCoeffs)
@@ -55,44 +39,30 @@ namespace OblikConfigurator
             numericZoneB.Value = (decimal)currentCoeffs.Pwr_lim_B;
             numericZoneC.Value = (decimal)currentCoeffs.Pwr_lim_C;
             numericZoneD.Value = (decimal)currentCoeffs.Pwr_lim_D;
-            
             numericInterval.Value = currentCoeffs.Save_const;
             UpdateUnits();
-            
         }
 
+       
         private void UpdateUnits()
         {
-            float Ku = currentCoeffs.Volt_1w / currentCoeffs.Volt_2w;
-            float Ki = currentCoeffs.Curr_1w / currentCoeffs.Curr_2w;
-            float Kp = Ku * Ki;
+            string PrefixString(sbyte unit, string unitname)
+            {
+                string[] prefixes = { "", "к", "М", "Г", "Т" };
+                int index = unit / 3;
+                string prefix = prefixes[index];
+                float coef = (float)Math.Pow(10, unit - 3 * index);
+                return $"{prefix}{unitname}" + ((coef == 1) ? "" : $" · {coef}");
+            }
 
-            currentCoeffs.Volt_fct = Ku;
-            currentCoeffs.Curr_fct = Ki;
-            currentCoeffs.Powr_fct = Kp;
-
-            sbyte pwr_unit = (sbyte)Math.Log10(Kp * 4);
-            currentCoeffs.Powr_unit = pwr_unit;
-            currentCoeffs.Powr_fct /= (float)Math.Pow(10, pwr_unit);
             textBoxCoeffPow.Text = currentCoeffs.Powr_fct.ToString();
-            textBoxUnitPow.Text = CoeffsString(currentCoeffs.Powr_unit, "Вт");
-
-            currentCoeffs.Ener_unit = (sbyte)(pwr_unit + 3);
-            currentCoeffs.Ener_fct = Kp / 1800;
+            textBoxUnitPow.Text = PrefixString(currentCoeffs.Powr_unit, "Вт");
             textBoxCoeffEn.Text = $"{currentCoeffs.Ener_fct:f6}";
-            textBoxUnitEn.Text = CoeffsString(currentCoeffs.Ener_unit, "Вт·ч");
-
-            sbyte volt_unit = (sbyte)(Math.Log10(currentCoeffs.Volt_fct * 5) - 1);
-            currentCoeffs.Volt_unit = (volt_unit < 0) ? (sbyte)0 : volt_unit;
-            currentCoeffs.Volt_fct /= (float)Math.Pow(10, currentCoeffs.Volt_unit);
+            textBoxUnitEn.Text = PrefixString(currentCoeffs.Ener_unit, "Вт·ч");
             textBoxCoeffU.Text = currentCoeffs.Volt_fct.ToString();
-            textBoxUnitU.Text = CoeffsString(currentCoeffs.Volt_unit, "В");
-
-            sbyte curr_unit = (sbyte)(Math.Log10(currentCoeffs.Curr_fct * 100.0) - 1);
-            currentCoeffs.Curr_unit = curr_unit;
-            currentCoeffs.Curr_fct /= (float)Math.Pow(10, curr_unit);
+            textBoxUnitU.Text = PrefixString(currentCoeffs.Volt_unit, "В");
             textBoxCoeffI.Text = currentCoeffs.Curr_fct.ToString();
-            textBoxUnitI.Text = CoeffsString(currentCoeffs.Curr_unit, "А");            
+            textBoxUnitI.Text = PrefixString(currentCoeffs.Curr_unit, "А");            
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -102,9 +72,6 @@ namespace OblikConfigurator
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            
-
-
             Close();
             mainForm.SaveCalculationParams(currentCoeffs);
         }
