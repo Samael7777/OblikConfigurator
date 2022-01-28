@@ -44,7 +44,59 @@ namespace OblikConfigurator
             label_c1_B.Text = values.Channel_1_B.ToString();
             label_c1_C.Text = values.Channel_1_C.ToString();
             label_c1_D.Text = values.Channel_1_D.ToString();
+            label_c1_sum.Text = (values.Channel_1_A + values.Channel_1_B + values.Channel_1_C + values.Channel_1_D).ToString();
 
+            label_c2_A.Text = values.Channel_2_A.ToString();
+            label_c2_B.Text = values.Channel_2_B.ToString();
+            label_c2_C.Text = values.Channel_2_C.ToString();
+            label_c2_D.Text = values.Channel_2_D.ToString();
+            label_c2_sum.Text = (values.Channel_2_A + values.Channel_2_B + values.Channel_2_C + values.Channel_2_D).ToString();
+
+            label_c3_A.Text = values.Channel_3_A.ToString();
+            label_c3_B.Text = values.Channel_3_B.ToString();
+            label_c3_C.Text = values.Channel_3_C.ToString();
+            label_c3_D.Text = values.Channel_3_D.ToString();
+            label_c3_sum.Text = (values.Channel_3_A + values.Channel_3_B + values.Channel_3_C + values.Channel_3_D).ToString();
+
+            label_c4_A.Text = values.Channel_4_A.ToString();
+            label_c4_B.Text = values.Channel_4_B.ToString();
+            label_c4_C.Text = values.Channel_4_C.ToString();
+            label_c4_D.Text = values.Channel_4_D.ToString();
+            label_c4_sum.Text = (values.Channel_4_A + values.Channel_4_B + values.Channel_4_C + values.Channel_4_D).ToString();
+
+            label_c5_A.Text = values.Channel_5_A.ToString();
+            label_c5_B.Text = values.Channel_5_B.ToString();
+            label_c5_C.Text = values.Channel_5_C.ToString();
+            label_c5_D.Text = values.Channel_5_D.ToString();
+            label_c5_sum.Text = (values.Channel_5_A + values.Channel_5_B + values.Channel_5_C + values.Channel_5_D).ToString();
+
+            label_c6_A.Text = values.Channel_6_A.ToString();
+            label_c6_B.Text = values.Channel_6_B.ToString();
+            label_c6_C.Text = values.Channel_6_C.ToString();
+            label_c6_D.Text = values.Channel_6_D.ToString();
+            label_c6_sum.Text = (values.Channel_6_A + values.Channel_6_B + values.Channel_6_C + values.Channel_6_D).ToString();
+
+            label_c7_A.Text = values.Channel_7_A.ToString();
+            label_c7_B.Text = values.Channel_7_B.ToString();
+            label_c7_C.Text = values.Channel_7_C.ToString();
+            label_c7_D.Text = values.Channel_7_D.ToString();
+            label_c7_sum.Text = (values.Channel_7_A + values.Channel_7_B + values.Channel_7_C + values.Channel_7_D).ToString();
+
+            label_c8_A.Text = values.Channel_8_A.ToString();
+            label_c8_B.Text = values.Channel_8_B.ToString();
+            label_c8_C.Text = values.Channel_8_C.ToString();
+            label_c8_D.Text = values.Channel_8_D.ToString();
+            label_c8_sum.Text = (values.Channel_8_A + values.Channel_8_B + values.Channel_8_C + values.Channel_8_D).ToString();
+
+            labelEx_A.Text = values.Exceed_A.ToString();
+            labelEx_B.Text = values.Exceed_B.ToString();
+            labelEx_C.Text = values.Exceed_C.ToString();
+            labelEx_D.Text = values.Exceed_D.ToString();
+
+            labelMax_ex_A.Text = values.Max_exc_A.ToString();
+            labelMax_ex_B.Text = values.Max_exc_B.ToString();
+            labelMax_ex_C.Text = values.Max_exc_C.ToString();
+            labelMax_ex_D.Text = values.Max_exc_D.ToString();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)

@@ -21,8 +21,8 @@ namespace OblikConfigurator
         
         
         CalcUnits currentCoeffs;
-        float Ki, Ku, Ken, Kpow;
-        float dispKi, dispKu, dispKen, dispKpow;    //Коэффициенты для отображаемой информации
+        float Ki, Ku, Kpow;
+        float dispKi, dispKu, dispKpow;    //Коэффициенты для отображаемой информации
 
         readonly Label[] channels;
         readonly Control[] controls;
@@ -34,7 +34,6 @@ namespace OblikConfigurator
             
             dispKu = 1;
             dispKi = 1;
-            dispKen = 1;
             dispKpow = 1;
 
             Executor = new Executor(this);
@@ -151,7 +150,6 @@ namespace OblikConfigurator
             void SetCoeffs(CalcUnits coeffs)
             {
                 currentCoeffs = coeffs;
-                Ken = (float)(currentCoeffs.Ener_fct * Math.Pow(10, currentCoeffs.Ener_unit - 6));
                 Kpow = (float)(currentCoeffs.Powr_fct * Math.Pow(10, currentCoeffs.Powr_unit));
                 Ki = (float)(currentCoeffs.Curr_fct * Math.Pow(10, currentCoeffs.Curr_unit));
                 Ku = (float)(currentCoeffs.Volt_fct * Math.Pow(10, currentCoeffs.Volt_unit));
@@ -437,7 +435,7 @@ namespace OblikConfigurator
 
         private void ButtonEventLog_Click(object sender, EventArgs e)
         {
-            Executor.Execute(
+            Executor.ExecuteAsync(
                 () =>
                 {
                     int ptr = Settings.Oblik.EventLogPointer;
@@ -449,6 +447,110 @@ namespace OblikConfigurator
                     formEvents.Show();
                 }
                 );
+        }
+
+        private void текущиеСуткиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Executor.ExecuteAsync
+            (
+                () => { return Settings.Oblik.CurrentDayIntegralValues; },
+                (values) =>
+                {
+                    FormInregralValues formInregralValues = new FormInregralValues(values, currentCoeffs, "Интегральные значения за текущие сутки");
+                    formInregralValues.Show();
+                }
+            );
+        }
+
+        private void текущийМесяцToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Executor.ExecuteAsync
+            (
+                () => { return Settings.Oblik.CurrentMonthIntegralValues; },
+                (values) =>
+                {
+                    FormInregralValues formInregralValues = new FormInregralValues(values, currentCoeffs, "Интегральные значения за текущий месяц");
+                    formInregralValues.Show();
+                }
+            );
+        }
+
+        private void текущийКварталToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Executor.ExecuteAsync
+            (
+               () => { return Settings.Oblik.CurrentQuarterIntegralValues; },
+               (values) =>
+               {
+                   FormInregralValues formInregralValues = new FormInregralValues(values, currentCoeffs, "Интегральные значения за текущий квартал");
+                   formInregralValues.Show();
+               }
+            );
+        }
+
+        private void текущийГодToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           Executor.ExecuteAsync
+           (
+               () => { return Settings.Oblik.CurrentYearIntegralValues; },
+               (values) =>
+               {
+                   FormInregralValues formInregralValues = new FormInregralValues(values, currentCoeffs, "Интегральные значения за текущий год");
+                   formInregralValues.Show();
+               }
+           );
+        }
+
+        private void прошлыеСуткиToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+           Executor.ExecuteAsync
+           (
+               () => { return Settings.Oblik.LastDayIntegralValues; },
+               (values) =>
+               {
+                   FormInregralValues formInregralValues = new FormInregralValues(values, currentCoeffs, "Интегральные значения за прошлые сутки");
+                   formInregralValues.Show();
+               }
+           );
+        }
+
+        private void прошлыйМесяцToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Executor.ExecuteAsync
+           (
+               () => { return Settings.Oblik.LastMonthIntegralValues; },
+               (values) =>
+               {
+                   FormInregralValues formInregralValues = new FormInregralValues(values, currentCoeffs, "Интегральные значения за прошлый месяц");
+                   formInregralValues.Show();
+               }
+           );
+        }
+
+        private void прошлыйКварталToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Executor.ExecuteAsync
+           (
+               () => { return Settings.Oblik.LastQuarterIntegralValues; },
+               (values) =>
+               {
+                   FormInregralValues formInregralValues = new FormInregralValues(values, currentCoeffs, "Интегральные значения за прошлый квартал");
+                   formInregralValues.Show();
+               }
+           );
+        }
+
+        private void прошлыйГодToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Executor.ExecuteAsync
+           (
+               () => { return Settings.Oblik.LastYearIntegralValues; },
+               (values) =>
+               {
+                   FormInregralValues formInregralValues = new FormInregralValues(values, currentCoeffs, "Интегральные значения за прошлый год");
+                   formInregralValues.Show();
+               }
+           );
         }
 
         private void ButtonDayGraph_Click(object sender, EventArgs e)
@@ -478,7 +580,6 @@ namespace OblikConfigurator
             dispKu = (CheckboxCoeffs.Checked) ? Ku : 1;
             dispKi = (CheckboxCoeffs.Checked) ? Ki : 1;
             dispKpow = (CheckboxCoeffs.Checked) ? Kpow : 1;
-            dispKen = (CheckboxCoeffs.Checked) ? Ken : 1;
             UpdateGeneralInfo();
         }
 
