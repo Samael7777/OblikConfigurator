@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.label1 = new System.Windows.Forms.Label();
             this.LabelFW = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -376,6 +377,7 @@
             this.ButtonEventLog.TabIndex = 5;
             this.ButtonEventLog.Text = "Смотреть";
             this.ButtonEventLog.UseVisualStyleBackColor = true;
+            this.ButtonEventLog.Click += new System.EventHandler(this.ButtonEventLog_Click);
             // 
             // ButtonDayGraph
             // 
@@ -1286,6 +1288,7 @@
             this.Controls.Add(this.ReachTexBoxLog);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(800, 585);
             this.Name = "FormMain";
             this.Text = "Параметризатор счетчика ОБЛИК";

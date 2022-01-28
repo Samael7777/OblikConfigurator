@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 
 namespace OblikConfigurator
 {
-    internal class InfoUpdater
+    internal class Executor
     {
         private readonly FormMain mainForm;
 
-        internal InfoUpdater(FormMain form)
+        internal Executor(FormMain form)
         {
             mainForm = form;
         }
@@ -19,7 +19,7 @@ namespace OblikConfigurator
         /// <typeparam name="T">Тип данных</typeparam>
         /// <param name="MeterAction">Метод счетчика</param>
         /// <param name="FormAction">етод формы для обновления данных</param>
-        internal async void UpdateAsync<T>(Func<T> MeterAction, Action<T> FormAction = default)
+        internal async void ExecuteAsync<T>(Func<T> MeterAction, Action<T> FormAction = default)
         {
             await Task.Factory.StartNew(() => SafeActionTask(mainForm, MeterAction, FormAction));
         }
@@ -30,7 +30,7 @@ namespace OblikConfigurator
         /// <typeparam name="T"></typeparam>
         /// <param name="MeterAction"></param>
         /// <param name="FormAction"></param>
-        internal void Update<T>(Func<T> MeterAction, Action<T> FormAction = default)
+        internal void Execute<T>(Func<T> MeterAction, Action<T> FormAction = default)
         {
             SafeActionTask(mainForm, MeterAction, FormAction);
         }

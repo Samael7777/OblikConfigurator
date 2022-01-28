@@ -75,18 +75,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\EventsDecoder.cs" />
+    <Compile Include="Classes\UnitsBuilder.cs" />
     <Compile Include="FormConnect.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormConnect.Designer.cs">
       <DependentUpon>FormConnect.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\InfoUpdater.cs" />
+    <Compile Include="Classes\Executor.cs" />
     <Compile Include="FormDayGraph.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDayGraph.Designer.cs">
       <DependentUpon>FormDayGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEvents.Designer.cs">
+      <DependentUpon>FormEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInregralValues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInregralValues.Designer.cs">
+      <DependentUpon>FormInregralValues.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogRequest.cs">
       <SubType>Form</SubType>
@@ -126,6 +140,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDayGraph.resx">
       <DependentUpon>FormDayGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEvents.resx">
+      <DependentUpon>FormEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInregralValues.resx">
+      <DependentUpon>FormInregralValues.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogRequest.resx">
       <DependentUpon>FormLogRequest.cs</DependentUpon>

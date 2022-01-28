@@ -26,7 +26,7 @@ namespace OblikConfigurator
 
         readonly Label[] channels;
         readonly Control[] controls;
-        readonly InfoUpdater InfoUpdater;
+        readonly Executor Executor;
         
         public FormMain()
         {
@@ -37,7 +37,7 @@ namespace OblikConfigurator
             dispKen = 1;
             dispKpow = 1;
 
-            InfoUpdater = new InfoUpdater(this);
+            Executor = new Executor(this);
             currentCoeffs = new CalcUnits();
 
             TimerAutoupdate.Interval = 1000;
@@ -156,7 +156,7 @@ namespace OblikConfigurator
                 Ki = (float)(currentCoeffs.Curr_fct * Math.Pow(10, currentCoeffs.Curr_unit));
                 Ku = (float)(currentCoeffs.Volt_fct * Math.Pow(10, currentCoeffs.Volt_unit));
             }
-            InfoUpdater.UpdateAsync(() => Settings.Oblik.CalculationParams, SetCoeffs);
+            Executor.ExecuteAsync(() => Settings.Oblik.CalculationParams, SetCoeffs);
         }
 
         /// <summary>
@@ -193,7 +193,8 @@ namespace OblikConfigurator
                 {
                     LabelCos.Text = string.Format("{0:f3}", cos) + "(L)";
                 }
-
+                
+                //Основной канал
                 LabelUa.Text = $"{generalInfo.CurrentValues.Volt1 * dispKu:f2}";
                 LabelUb.Text = $"{generalInfo.CurrentValues.Volt2 * dispKu:f2}";
                 LabelUc.Text = $"{generalInfo.CurrentValues.Volt3 * dispKu:f2}";
@@ -203,7 +204,7 @@ namespace OblikConfigurator
                 LabelFreq.Text = $"{generalInfo.CurrentValues.Freq / 30f:f3}";
                 LabelActPower.Text = $"{P * dispKpow:f4}";
                 LabelReaPower.Text = $"{Q * dispKpow:f4}";
-
+                //Импульсные каналы
                 LabelChannel1.Text = generalInfo.MinuteValues.Channel_1.ToString();
                 LabelChannel2.Text = generalInfo.MinuteValues.Channel_2.ToString();
                 LabelChannel3.Text = generalInfo.MinuteValues.Channel_3.ToString();
@@ -220,7 +221,7 @@ namespace OblikConfigurator
                 LabelCurrentTime.Text = $"{DateTime.Now:T}";
             }
 
-            InfoUpdater.UpdateAsync(GetGeneralInfo, SetGeneralInfo);    
+            Executor.ExecuteAsync(GetGeneralInfo, SetGeneralInfo);    
         }
 
         /// <summary>
@@ -254,7 +255,7 @@ namespace OblikConfigurator
         /// </summary>
         internal void UpdateFirmwareInfo()
         {
-            InfoUpdater.UpdateAsync(() => Settings.Oblik.Firmware, (info) => LabelFW.Text = $"{info.Version}.{info.Build}");
+            Executor.ExecuteAsync(() => Settings.Oblik.Firmware, (info) => LabelFW.Text = $"{info.Version}.{info.Build}");
         }
 
         /// <summary>
@@ -270,7 +271,7 @@ namespace OblikConfigurator
                 LabelBaudrate.Text = netconfig.Baudrate.ToString();
             }
 
-            InfoUpdater.UpdateAsync(() => Settings.Oblik.NetworkConfig, SetNetconfigLabels);
+            Executor.ExecuteAsync(() => Settings.Oblik.NetworkConfig, SetNetconfigLabels);
         }
 
         /// <summary>
@@ -279,13 +280,13 @@ namespace OblikConfigurator
         /// <param name="config"></param>
         internal void SaveNetworkConfig(NetworkConfig config)
         {
-            InfoUpdater.Execute(() => Settings.Oblik.NetworkConfig = config);
+            Executor.Execute((Action)(() => Settings.Oblik.NetworkConfig = config));
             UpdateNetwokConfig();
         }
 
         internal void SaveCalculationParams(CalcUnits currentCoeffs)
         {
-            InfoUpdater.Execute(() => Settings.Oblik.CalculationParams = currentCoeffs);
+            Executor.Execute((Action)(() => Settings.Oblik.CalculationParams = currentCoeffs));
             UpdateCoeffs();
         }
 
@@ -305,11 +306,12 @@ namespace OblikConfigurator
         /// <param name="records">Количество последних записей</param>
         internal void DayGraphShow(int records)
         {
-            InfoUpdater.UpdateAsync(
+            Executor.ExecuteAsync(
                 () => Settings.Oblik.GetDayGraphRecords(records),
                 (recs) =>
                 {
-                    FormDayGraph formDG = new FormDayGraph(recs);
+                    float ener_cf = (float)Math.Pow(10, currentCoeffs.Ener_unit - 6);
+                    FormDayGraph formDG = new FormDayGraph(recs, ener_cf);
                     formDG.Show();
                 });
         }
@@ -349,7 +351,7 @@ namespace OblikConfigurator
                 formNetConfig.Show();
             }
 
-            InfoUpdater.UpdateAsync(() => Settings.Oblik.NetworkConfig, ShowNetconfigForm);
+            Executor.ExecuteAsync(() => Settings.Oblik.NetworkConfig, ShowNetconfigForm);
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -380,7 +382,7 @@ namespace OblikConfigurator
                 formSegmentsMap.Show();
                 formSegmentsMap.BringToFront();
             };
-            InfoUpdater.UpdateAsync(() => Settings.Oblik.SegmentsMap, SetSegmentsMap);
+            Executor.ExecuteAsync(() => Settings.Oblik.SegmentsMap, SetSegmentsMap);
         }
 
  
@@ -389,7 +391,7 @@ namespace OblikConfigurator
         {
             if (MessageBox.Show("Стереть суточный график?","Подтверждение" ,MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                InfoUpdater.UpdateAsync(
+                Executor.ExecuteAsync(
                     () =>
                     {
                         Settings.Oblik.CleanDayGraph();
@@ -403,7 +405,7 @@ namespace OblikConfigurator
         {
             if (MessageBox.Show("Стереть пртокол событий?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                InfoUpdater.UpdateAsync(
+                Executor.ExecuteAsync(
                     () =>
                     {
                         Settings.Oblik.CleanEventLog();
@@ -415,8 +417,8 @@ namespace OblikConfigurator
 
         private void btnSyncTime_Click(object sender, EventArgs e)
         {
-            InfoUpdater.ExecuteAsync(() => Settings.Oblik.CurrentTimeUTC = DateTime.UtcNow);
-            InfoUpdater.UpdateAsync(
+            Executor.ExecuteAsync((Action)(() => Settings.Oblik.CurrentTimeUTC = DateTime.UtcNow));
+            Executor.ExecuteAsync(
                 () => (DateTime)Settings.Oblik.CurrentTimeUTC, 
                 (time) => LabelMeterTime.Text = string.Format("{0:T}", time.ToLocalTime())
             );
@@ -433,9 +435,26 @@ namespace OblikConfigurator
             TimerAutoupdate.Enabled = false;
         }
 
+        private void ButtonEventLog_Click(object sender, EventArgs e)
+        {
+            Executor.Execute(
+                () =>
+                {
+                    int ptr = Settings.Oblik.EventLogPointer;
+                    return Settings.Oblik.GetEventLogRecords(ptr);
+                },
+                (recs) =>
+                {
+                    FormEvents formEvents = new FormEvents(recs);
+                    formEvents.Show();
+                }
+                );
+        }
+
         private void ButtonDayGraph_Click(object sender, EventArgs e)
         {
-            InfoUpdater.Update(() => Settings.Oblik.DayGraphPointer,
+            Executor.Execute(
+                () => Settings.Oblik.DayGraphPointer,
                 (recs) =>
                 {
                     FormLogRequest formLogRequest = new FormLogRequest(this, recs);
@@ -445,7 +464,7 @@ namespace OblikConfigurator
 
         private void настройкаПараметровToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           InfoUpdater.UpdateAsync(
+           Executor.ExecuteAsync(
                 () => Settings.Oblik.CalculationParams, 
                 (coeffs) =>
                 {

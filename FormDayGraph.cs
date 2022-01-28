@@ -7,7 +7,7 @@ namespace OblikConfigurator
 {
     public partial class FormDayGraph : Form
     {
-        public FormDayGraph(DayGraphRecord[] records)
+        public FormDayGraph(DayGraphRecord[] records, float ener_cf)
         {
             InitializeComponent();
             foreach (DayGraphRecord item in records.Reverse())
@@ -15,10 +15,10 @@ namespace OblikConfigurator
                 DatagridDayGraph.Rows.Add
                     (
                         ((DateTime)item.TimeStamp).ToLocalTime(),
-                        $"{(float)item.Act_en_p}",
-                        $"{(float)item.Act_en_n}",
-                        $"{(float)item.Rea_en_p}",
-                        $"{(float)item.Rea_en_n}",
+                        $"{item.Act_en_p * ener_cf}",
+                        $"{item.Act_en_n * ener_cf}",
+                        $"{item.Rea_en_p * ener_cf}",
+                        $"{item.Rea_en_n * ener_cf}",
                         item.Channel_1,
                         item.Channel_2,
                         item.Channel_3,
@@ -29,6 +29,11 @@ namespace OblikConfigurator
                         item.Channel_8
                     );
             }
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

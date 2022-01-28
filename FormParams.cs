@@ -45,24 +45,15 @@ namespace OblikConfigurator
 
        
         private void UpdateUnits()
-        {
-            string PrefixString(sbyte unit, string unitname)
-            {
-                string[] prefixes = { "", "к", "М", "Г", "Т" };
-                int index = unit / 3;
-                string prefix = prefixes[index];
-                float coef = (float)Math.Pow(10, unit - 3 * index);
-                return $"{prefix}{unitname}" + ((coef == 1) ? "" : $" · {coef}");
-            }
-
+        {        
             textBoxCoeffPow.Text = currentCoeffs.Powr_fct.ToString();
-            textBoxUnitPow.Text = PrefixString(currentCoeffs.Powr_unit, "Вт");
+            textBoxUnitPow.Text = UnitsBuilder.Build(currentCoeffs.Powr_unit, "Вт");
             textBoxCoeffEn.Text = $"{currentCoeffs.Ener_fct:f6}";
-            textBoxUnitEn.Text = PrefixString(currentCoeffs.Ener_unit, "Вт·ч");
+            textBoxUnitEn.Text = UnitsBuilder.Build(currentCoeffs.Ener_unit, "Вт·ч");
             textBoxCoeffU.Text = currentCoeffs.Volt_fct.ToString();
-            textBoxUnitU.Text = PrefixString(currentCoeffs.Volt_unit, "В");
+            textBoxUnitU.Text = UnitsBuilder.Build(currentCoeffs.Volt_unit, "В");
             textBoxCoeffI.Text = currentCoeffs.Curr_fct.ToString();
-            textBoxUnitI.Text = PrefixString(currentCoeffs.Curr_unit, "А");            
+            textBoxUnitI.Text = UnitsBuilder.Build(currentCoeffs.Curr_unit, "А");            
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

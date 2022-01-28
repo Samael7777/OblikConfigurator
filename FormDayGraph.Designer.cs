@@ -44,6 +44,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDayGraph));
             this.DatagridDayGraph = new System.Windows.Forms.DataGridView();
             this.ColTimestamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAct_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +59,10 @@
             this.ColChan6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColChan7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColChan8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DatagridDayGraph)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DatagridDayGraph
@@ -99,6 +103,7 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DatagridDayGraph.DefaultCellStyle = dataGridViewCellStyle15;
             this.DatagridDayGraph.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DatagridDayGraph.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DatagridDayGraph.Location = new System.Drawing.Point(0, 0);
             this.DatagridDayGraph.Name = "DatagridDayGraph";
             this.DatagridDayGraph.ReadOnly = true;
@@ -106,7 +111,7 @@
             this.DatagridDayGraph.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.DatagridDayGraph.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.DatagridDayGraph.ShowEditingIcon = false;
-            this.DatagridDayGraph.Size = new System.Drawing.Size(1195, 486);
+            this.DatagridDayGraph.Size = new System.Drawing.Size(970, 614);
             this.DatagridDayGraph.TabIndex = 0;
             // 
             // ColTimestamp
@@ -119,7 +124,6 @@
             this.ColTimestamp.HeaderText = "Метка времени";
             this.ColTimestamp.Name = "ColTimestamp";
             this.ColTimestamp.ReadOnly = true;
-            this.ColTimestamp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // ColAct_p
             // 
@@ -127,10 +131,9 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColAct_p.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColAct_p.FillWeight = 105F;
-            this.ColAct_p.HeaderText = "Активная (+)";
+            this.ColAct_p.HeaderText = "Активная ЭЭ(+), кВт·ч";
             this.ColAct_p.Name = "ColAct_p";
             this.ColAct_p.ReadOnly = true;
-            this.ColAct_p.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ColAct_n
             // 
@@ -139,10 +142,9 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ColAct_n.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColAct_n.FillWeight = 105F;
-            this.ColAct_n.HeaderText = "Активная (-)";
+            this.ColAct_n.HeaderText = "Активная ЭЭ (-), кВт·ч";
             this.ColAct_n.Name = "ColAct_n";
             this.ColAct_n.ReadOnly = true;
-            this.ColAct_n.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ColRea_p
             // 
@@ -150,10 +152,9 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColRea_p.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColRea_p.FillWeight = 105F;
-            this.ColRea_p.HeaderText = "Реактивная (+)";
+            this.ColRea_p.HeaderText = "Реактивная ЭЭ(+), квар·ч";
             this.ColRea_p.Name = "ColRea_p";
             this.ColRea_p.ReadOnly = true;
-            this.ColRea_p.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ColRea_n
             // 
@@ -161,10 +162,9 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColRea_n.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColRea_n.FillWeight = 105F;
-            this.ColRea_n.HeaderText = "Реактивная (-)";
+            this.ColRea_n.HeaderText = "Реактивная ЭЭ(-), квар·ч";
             this.ColRea_n.Name = "ColRea_n";
             this.ColRea_n.ReadOnly = true;
-            this.ColRea_n.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ColChan1
             // 
@@ -175,7 +175,6 @@
             this.ColChan1.HeaderText = "Канал 1";
             this.ColChan1.Name = "ColChan1";
             this.ColChan1.ReadOnly = true;
-            this.ColChan1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ColChan2
             // 
@@ -186,7 +185,6 @@
             this.ColChan2.HeaderText = "Канал 2";
             this.ColChan2.Name = "ColChan2";
             this.ColChan2.ReadOnly = true;
-            this.ColChan2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ColChan3
             // 
@@ -197,7 +195,6 @@
             this.ColChan3.HeaderText = "Канал 3";
             this.ColChan3.Name = "ColChan3";
             this.ColChan3.ReadOnly = true;
-            this.ColChan3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ColChan4
             // 
@@ -208,7 +205,6 @@
             this.ColChan4.HeaderText = "Канал 4";
             this.ColChan4.Name = "ColChan4";
             this.ColChan4.ReadOnly = true;
-            this.ColChan4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ColChan5
             // 
@@ -219,7 +215,6 @@
             this.ColChan5.HeaderText = "Канал 5";
             this.ColChan5.Name = "ColChan5";
             this.ColChan5.ReadOnly = true;
-            this.ColChan5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ColChan6
             // 
@@ -230,7 +225,6 @@
             this.ColChan6.HeaderText = "Канал 6";
             this.ColChan6.Name = "ColChan6";
             this.ColChan6.ReadOnly = true;
-            this.ColChan6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ColChan7
             // 
@@ -251,17 +245,41 @@
             this.ColChan8.HeaderText = "Канал 8";
             this.ColChan8.Name = "ColChan8";
             this.ColChan8.ReadOnly = true;
-            this.ColChan8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.DatagridDayGraph);
+            this.panel1.Location = new System.Drawing.Point(3, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(970, 614);
+            this.panel1.TabIndex = 1;
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonClose.Location = new System.Drawing.Point(888, 625);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(75, 23);
+            this.buttonClose.TabIndex = 1;
+            this.buttonClose.Text = "Закрыть";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // FormDayGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 486);
-            this.Controls.Add(this.DatagridDayGraph);
+            this.ClientSize = new System.Drawing.Size(975, 660);
+            this.Controls.Add(this.buttonClose);
+            this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDayGraph";
             this.Text = "DayGraphForm";
             ((System.ComponentModel.ISupportInitialize)(this.DatagridDayGraph)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -282,5 +300,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColChan6;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColChan7;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColChan8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonClose;
     }
 }
